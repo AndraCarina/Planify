@@ -10,7 +10,6 @@ import Firebase
 
 @main
 struct PlanifyApp: App {
-    
     init() {
         FirebaseApp.configure()
     }

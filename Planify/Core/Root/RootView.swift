@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct RootView: View {
+    @ObservedObject private var authManager = AuthManager.shared
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if authManager.authState ==  .NOT_SIGNED_IN {
+                SignInView()
+            } else if authManager.authState == .SIGNING_IN {
+                SigningInView()
+            } else {
+                SignedInView()
+            }
         }
-        .padding()
     }
 }
 
