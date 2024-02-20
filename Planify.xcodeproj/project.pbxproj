@@ -21,6 +21,7 @@
 		4507B0942B83A9AF00B0CC65 /* SignedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B0932B83A9AF00B0CC65 /* SignedInView.swift */; };
 		45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA32B8479AE00E05024 /* SignUpView.swift */; };
 		45E94DA62B847B5E00E05024 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA52B847B5E00E05024 /* InputView.swift */; };
+		45E94DA82B847E5900E05024 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA72B847E5900E05024 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		4507B0932B83A9AF00B0CC65 /* SignedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInView.swift; sourceTree = "<group>"; };
 		45E94DA32B8479AE00E05024 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		45E94DA52B847B5E00E05024 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputView.swift; path = Planify/Core/Auth/View/InputView.swift; sourceTree = SOURCE_ROOT; };
+		45E94DA72B847E5900E05024 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Planify/Core/Auth/View/UserModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		4507B0722B83960400B0CC65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45E94DA72B847E5900E05024 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				4507B0942B83A9AF00B0CC65 /* SignedInView.swift in Sources */,
 				45E94DA62B847B5E00E05024 /* InputView.swift in Sources */,
 				4507B0902B83A6A200B0CC65 /* SignInView.swift in Sources */,
+				45E94DA82B847E5900E05024 /* UserModel.swift in Sources */,
 				4507B0612B83949F00B0CC65 /* PlanifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

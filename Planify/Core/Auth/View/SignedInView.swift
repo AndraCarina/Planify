@@ -18,7 +18,7 @@ struct SignedInView: View {
     @ObservedObject var viewModel = SignedInViewModel()
     
     var body: some View {
-        Text("Signed in.")
+        Text("Signed in with UID:\(AuthManager.shared.firebaseUser!.uid).")
         
         Button {
             viewModel.signOut()
