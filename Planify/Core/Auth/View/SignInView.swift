@@ -18,11 +18,20 @@ struct SignInView: View {
     @ObservedObject var viewModel =  SignInViewModel()
     
     var body: some View {
-        Text("Not signed in.")
-        Button {
-            viewModel.signInWithEmail()
-        } label: {
-            Text("Sign in")
+        NavigationStack {
+            Text("Not signed in.")
+            
+            Button {
+                viewModel.signInWithEmail()
+            } label: {
+                Text("Sign in")
+            }
+            
+            NavigationLink {
+                SignUpView().navigationBarBackButtonHidden()
+            } label: {
+                Text("Sign up")
+            }
         }
     }
 }

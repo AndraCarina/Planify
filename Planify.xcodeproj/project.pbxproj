@@ -19,6 +19,7 @@
 		4507B0902B83A6A200B0CC65 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B08F2B83A6A200B0CC65 /* SignInView.swift */; };
 		4507B0922B83A97D00B0CC65 /* SigningInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B0912B83A97D00B0CC65 /* SigningInView.swift */; };
 		4507B0942B83A9AF00B0CC65 /* SignedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B0932B83A9AF00B0CC65 /* SignedInView.swift */; };
+		45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA32B8479AE00E05024 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4507B08F2B83A6A200B0CC65 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		4507B0912B83A97D00B0CC65 /* SigningInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningInView.swift; sourceTree = "<group>"; };
 		4507B0932B83A9AF00B0CC65 /* SignedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInView.swift; sourceTree = "<group>"; };
+		45E94DA32B8479AE00E05024 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				4507B08F2B83A6A200B0CC65 /* SignInView.swift */,
 				4507B0912B83A97D00B0CC65 /* SigningInView.swift */,
 				4507B0932B83A9AF00B0CC65 /* SignedInView.swift */,
+				45E94DA32B8479AE00E05024 /* SignUpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				4507B0632B83949F00B0CC65 /* RootView.swift in Sources */,
 				4507B08D2B83A1FD00B0CC65 /* AuthManager.swift in Sources */,
 				4507B0922B83A97D00B0CC65 /* SigningInView.swift in Sources */,
+				45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */,
 				4507B0942B83A9AF00B0CC65 /* SignedInView.swift in Sources */,
 				4507B0902B83A6A200B0CC65 /* SignInView.swift in Sources */,
 				4507B0612B83949F00B0CC65 /* PlanifyApp.swift in Sources */,

@@ -19,6 +19,7 @@ struct SignedInView: View {
     
     var body: some View {
         Text("Signed in.")
+        
         Button {
             viewModel.signOut()
         } label : {
