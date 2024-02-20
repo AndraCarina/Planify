@@ -10,7 +10,9 @@ import SwiftUI
 class SignUpViewModel: ObservableObject {
     @ObservedObject private var authManager = AuthManager.shared
     func signUp(email: String, password: String) {
-        authManager.signUp(email: email, password: password)
+        Task {
+            await authManager.signUp(email: email, password: password)
+        }
     }
 }
 

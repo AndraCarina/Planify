@@ -24,6 +24,7 @@
 		45E94DA82B847E5900E05024 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA72B847E5900E05024 /* UserModel.swift */; };
 		45E94DAB2B84A52700E05024 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAA2B84A52700E05024 /* GoogleSignIn */; };
 		45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAC2B84A52700E05024 /* GoogleSignInSwift */; };
+		45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DB02B84F8E000E05024 /* GoogleHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		45E94DA52B847B5E00E05024 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputView.swift; path = Planify/Core/Auth/View/InputView.swift; sourceTree = SOURCE_ROOT; };
 		45E94DA72B847E5900E05024 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Planify/Core/Auth/View/UserModel.swift; sourceTree = SOURCE_ROOT; };
 		45E94DAE2B84A6DD00E05024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		45E94DB02B84F8E000E05024 /* GoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		4507B0892B83A1E100B0CC65 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				45E94DAF2B84F8CA00E05024 /* Helper */,
 				4507B0952B83CE7600B0CC65 /* Manager */,
 				4507B08E2B83A68600B0CC65 /* View */,
 			);
@@ -175,6 +178,14 @@
 				4507B08C2B83A1FD00B0CC65 /* AuthManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		45E94DAF2B84F8CA00E05024 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				45E94DB02B84F8E000E05024 /* GoogleHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 				4507B08D2B83A1FD00B0CC65 /* AuthManager.swift in Sources */,
 				4507B0922B83A97D00B0CC65 /* SigningInView.swift in Sources */,
 				45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */,
+				45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */,
 				4507B0942B83A9AF00B0CC65 /* SignedInView.swift in Sources */,
 				45E94DA62B847B5E00E05024 /* InputView.swift in Sources */,
 				4507B0902B83A6A200B0CC65 /* SignInView.swift in Sources */,

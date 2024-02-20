@@ -10,10 +10,14 @@ import SwiftUI
 class SignInViewModel: ObservableObject {
     @ObservedObject private var authManager = AuthManager.shared
     func signInWithEmail(email: String, password: String) {
-        authManager.signInWithEmail(email: email, password: password)
+        Task{
+            await authManager.signInWithEmail(email: email, password: password)
+        }
     }
     func signInWithGoogle() {
-        authManager.signInWithGoogle()
+        Task {
+            await authManager.signInWithGoogle()
+        }
     }
 }
 
