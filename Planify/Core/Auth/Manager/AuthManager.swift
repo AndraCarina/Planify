@@ -89,6 +89,9 @@ class AuthManager: ObservableObject {
             return
         }
         
+        /* Change authState to SIGNING_IN while fetching data from the database. */
+        authState = .SIGNING_IN
+        
         /* Get database data for AppUser, if not available, return. */
         guard let snapshot = try? await Firestore.firestore().collection("users").document(firebaseUser.uid).getDocument() else {return }
         
