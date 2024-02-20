@@ -67,6 +67,45 @@ class AuthManager: ObservableObject {
         }
     }
     
+    func signInWithGoogle() async {
+        do {
+            /* Get AuthCredential from Google. */
+            guard let credential = try await GoogleHelper.getCredential() else { return }
+            /* Call sign in with Google. */
+            let result = try await Auth.auth().signIn(with: credential)
+            /* Create user to be encoded. */
+            let currentUser = UserModel(id: result.user.uid, email: result.user.email!)
+            /* Encode user. */
+            let encodedUser = try Firestore.Encoder().encode(currentUser)
+            /* Upload encoded user to Firestore. */
+            try await Firestore.firestore().collection("users").document(result.user.uid).setData(encodedUser)
+            /* Fetch user data. */
+            await fetchUser()
+        }
+        catch {
+            print(error.localizedDescription)
+            self.errorMessage = error.localizedDescription
+        }
+    }
+    
+    func signInAnonymously() async {
+        do {
+            /* Call sign in anonymously. */
+            let result = try await Auth.auth().signInAnonymously()
+            /* Create user to be encoded. */
+            let user = UserModel(id: result.user.uid, email: "NA")
+            /* Encode user. */
+            let encodedUser = try Firestore.Encoder().encode(user)
+            /* Upload encoded user to Firestore. */
+            try await Firestore.firestore().collection("users").document(result.user.uid).setData(encodedUser)
+            /* Fetch user data. */
+            await fetchUser()
+        } catch {
+            print(error.localizedDescription)
+            self.errorMessage = error.localizedDescription
+        }
+    }
+    
     func signOut() async {
         do {
             /* Call sign out. */
@@ -93,39 +132,22 @@ class AuthManager: ObservableObject {
         authState = .SIGNING_IN
         
         /* Get database data for AppUser, if not available, return. */
-        guard let snapshot = try? await Firestore.firestore().collection("users").document(firebaseUser.uid).getDocument() else {return }
+        guard let snapshot = try? await Firestore.firestore().collection("users").document(firebaseUser.uid).getDocument() else { return }
         
         /* Set local FirebaseUser and AppUser. */
         self.firebaseUser = firebaseUser
         self.appUser = try? snapshot.data(as: UserModel.self)
         
         /* Set authState depending on the provider. */
-        let providerID = firebaseUser.providerData[0].providerID
+        guard let providerID = firebaseUser.providerData.first?.providerID else {
+            authState = .GUEST_SIGN_IN
+            return
+        }
+        
         if providerID == "password" {
             authState = .EMAIL_SIGN_IN
         } else if providerID == "google.com" {
             authState = .GOOGLE_SIGN_IN
-        }
-    }
-    
-    func signInWithGoogle() async {
-        do {
-            /* Get AuthCredential from Google. */
-            guard let credential = try await GoogleHelper.getCredential() else {return }
-            /* Call sign in with Google. */
-            let result = try await Auth.auth().signIn(with: credential)
-            /* Create user to be encoded. */
-            let currentUser = UserModel(id: result.user.uid, email: result.user.email!)
-            /* Encode user. */
-            let encodedUser = try Firestore.Encoder().encode(currentUser)
-            /* Upload encoded user to Firestore. */
-            try await Firestore.firestore().collection("users").document(result.user.uid).setData(encodedUser)
-            /* Fetch user data. */
-            await fetchUser()
-        }
-        catch {
-            print(error.localizedDescription)
-            self.errorMessage = error.localizedDescription
         }
     }
 }

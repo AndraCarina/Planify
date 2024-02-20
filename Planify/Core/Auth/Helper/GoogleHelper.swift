@@ -37,7 +37,7 @@ final class GoogleHelper {
         /* Configure the Google Client ID. */
         GoogleHelper.configureClientID()
         /* Get the root view controller. */
-        guard let rootViewController = GoogleHelper.getRootViewController() else {return nil}
+        guard let rootViewController = GoogleHelper.getRootViewController() else { return nil}
         /* Sign in with Google and retrieve authentication details. */
         let userAuthentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
         /* Extract user details from authentication. */

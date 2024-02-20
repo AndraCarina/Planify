@@ -19,6 +19,11 @@ class SignInViewModel: ObservableObject {
             await authManager.signInWithGoogle()
         }
     }
+    func signInAnonymously() {
+        Task {
+            await authManager.signInAnonymously()
+        }
+    }
 }
 
 struct SignInView: View {
@@ -50,6 +55,12 @@ struct SignInView: View {
                 viewModel.signInWithGoogle()
             } label: {
                 Text("Sign in with Google")
+            }
+            
+            Button() {
+                viewModel.signInAnonymously()
+            } label: {
+                Text("Sign in with Guest")
             }
             
             NavigationLink {
