@@ -25,8 +25,7 @@ class AuthManager: ObservableObject {
         
     }
     
-    func signInWithEmail()
-    {
+    func signInWithEmail(email: String, password: String) {
         /* Set state to SIGNING_IN. */
         authState = .SIGNING_IN
         
@@ -37,8 +36,11 @@ class AuthManager: ObservableObject {
         authState = .EMAIL_SIGN_IN
     }
     
-    func signOut()
-    {
+    func signUp(email: String, password: String) {
+        
+    }
+    
+    func signOut() {
         authState = .NOT_SIGNED_IN
     }
 }

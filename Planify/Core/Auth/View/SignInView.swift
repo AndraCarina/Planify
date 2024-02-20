@@ -9,20 +9,32 @@ import SwiftUI
 
 class SignInViewModel: ObservableObject {
     @ObservedObject private var authManager = AuthManager.shared
-    func signInWithEmail() {
-        authManager.signInWithEmail()
+    func signInWithEmail(email: String, password: String) {
+        authManager.signInWithEmail(email: email, password: password)
     }
 }
 
 struct SignInView: View {
+    @State private var email = ""
+    @State private var password = ""
     @ObservedObject var viewModel =  SignInViewModel()
     
     var body: some View {
         NavigationStack {
             Text("Not signed in.")
             
+            InputView(text: $email,
+                      title: "Email Address",
+                      placeholder: "name@example.com")
+            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+            
+            InputView(text: $password,
+                      title: "Password",
+                      placeholder: "Enter your password",
+                      isSecureField: true)
+            
             Button {
-                viewModel.signInWithEmail()
+                viewModel.signInWithEmail(email: email, password: password)
             } label: {
                 Text("Sign in")
             }

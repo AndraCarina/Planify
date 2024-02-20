@@ -20,6 +20,7 @@
 		4507B0922B83A97D00B0CC65 /* SigningInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B0912B83A97D00B0CC65 /* SigningInView.swift */; };
 		4507B0942B83A9AF00B0CC65 /* SignedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B0932B83A9AF00B0CC65 /* SignedInView.swift */; };
 		45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA32B8479AE00E05024 /* SignUpView.swift */; };
+		45E94DA62B847B5E00E05024 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA52B847B5E00E05024 /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4507B0912B83A97D00B0CC65 /* SigningInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningInView.swift; sourceTree = "<group>"; };
 		4507B0932B83A9AF00B0CC65 /* SignedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInView.swift; sourceTree = "<group>"; };
 		45E94DA32B8479AE00E05024 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		45E94DA52B847B5E00E05024 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputView.swift; path = Planify/Core/Auth/View/InputView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		4507B0702B8395F000B0CC65 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				45E94DA52B847B5E00E05024 /* InputView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				4507B0922B83A97D00B0CC65 /* SigningInView.swift in Sources */,
 				45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */,
 				4507B0942B83A9AF00B0CC65 /* SignedInView.swift in Sources */,
+				45E94DA62B847B5E00E05024 /* InputView.swift in Sources */,
 				4507B0902B83A6A200B0CC65 /* SignInView.swift in Sources */,
 				4507B0612B83949F00B0CC65 /* PlanifyApp.swift in Sources */,
 			);
