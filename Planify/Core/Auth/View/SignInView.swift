@@ -12,6 +12,9 @@ class SignInViewModel: ObservableObject {
     func signInWithEmail(email: String, password: String) {
         authManager.signInWithEmail(email: email, password: password)
     }
+    func signInWithGoogle() {
+        authManager.signInWithGoogle()
+    }
 }
 
 struct SignInView: View {
@@ -37,6 +40,12 @@ struct SignInView: View {
                 viewModel.signInWithEmail(email: email, password: password)
             } label: {
                 Text("Sign in")
+            }
+            
+            Button() {
+                viewModel.signInWithGoogle()
+            } label: {
+                Text("Sign in with Google")
             }
             
             NavigationLink {

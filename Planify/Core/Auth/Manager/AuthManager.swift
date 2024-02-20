@@ -9,6 +9,8 @@ import Foundation
 import FirebaseAuth
 import Firebase
 import FirebaseFirestoreSwift
+import GoogleSignIn
+import GoogleSignInSwift
 
 enum AuthState {
     case NOT_SIGNED_IN
@@ -84,9 +86,54 @@ class AuthManager: ObservableObject {
     }
     
     func fetchUser() async {
+        authState = .EMAIL_SIGN_IN
         guard let uid = Auth.auth().currentUser?.uid else {return }
+        guard let user = Auth.auth().currentUser else {return}
+        print("\(user.providerData[0].providerID)")
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {return }
         self.appUser = try? snapshot.data(as: UserModel.self)
         authState = .EMAIL_SIGN_IN
+    }
+    
+    func signInWithGoogle() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else {
+          fatalError("No client ID found in Firebase configuration")
+        }
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first,
+              let rootViewController = window.rootViewController else {
+          print("There is no root view controller!")
+          return
+        }
+        Task {
+            do {
+                let userAuthentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
+                
+                let user = userAuthentication.user
+                guard let idToken = user.idToken else {return }
+                let accessToken = user.accessToken
+                
+                let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
+                                                               accessToken: accessToken.tokenString)
+                
+                let result = try await Auth.auth().signIn(with: credential)
+                let firebaseUser = result.user
+                self.firebaseUser = result.user
+                print("User \(firebaseUser.uid) signed in with email \(firebaseUser.email ?? "unknown")")
+                let currentUser = UserModel(id: result.user.uid, email: result.user.email!)
+                let encodedUser = try Firestore.Encoder().encode(currentUser)
+                try await Firestore.firestore().collection("users").document(currentUser.id).setData(encodedUser)
+                await fetchUser()
+                return
+            }
+            catch {
+                print(error.localizedDescription)
+                self.errorMessage = error.localizedDescription
+                return
+            }
+        }
     }
 }

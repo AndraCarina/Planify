@@ -22,6 +22,8 @@
 		45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA32B8479AE00E05024 /* SignUpView.swift */; };
 		45E94DA62B847B5E00E05024 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA52B847B5E00E05024 /* InputView.swift */; };
 		45E94DA82B847E5900E05024 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA72B847E5900E05024 /* UserModel.swift */; };
+		45E94DAB2B84A52700E05024 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAA2B84A52700E05024 /* GoogleSignIn */; };
+		45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAC2B84A52700E05024 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		45E94DA32B8479AE00E05024 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		45E94DA52B847B5E00E05024 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputView.swift; path = Planify/Core/Auth/View/InputView.swift; sourceTree = SOURCE_ROOT; };
 		45E94DA72B847E5900E05024 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Planify/Core/Auth/View/UserModel.swift; sourceTree = SOURCE_ROOT; };
+		45E94DAE2B84A6DD00E05024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */,
 				4507B0812B839EFB00B0CC65 /* FirebaseAuth in Frameworks */,
+				45E94DAB2B84A52700E05024 /* GoogleSignIn in Frameworks */,
 				4507B0832B839F0600B0CC65 /* FirebaseFirestore in Frameworks */,
 				4507B0852B839F0600B0CC65 /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -75,6 +80,7 @@
 		4507B05F2B83949F00B0CC65 /* Planify */ = {
 			isa = PBXGroup;
 			children = (
+				45E94DAE2B84A6DD00E05024 /* Info.plist */,
 				4507B06F2B8395AD00B0CC65 /* App */,
 				4507B0702B8395F000B0CC65 /* Components */,
 				4507B0712B8395F800B0CC65 /* Core */,
@@ -191,6 +197,8 @@
 				4507B0802B839EFB00B0CC65 /* FirebaseAuth */,
 				4507B0822B839F0600B0CC65 /* FirebaseFirestore */,
 				4507B0842B839F0600B0CC65 /* FirebaseFirestoreSwift */,
+				45E94DAA2B84A52700E05024 /* GoogleSignIn */,
+				45E94DAC2B84A52700E05024 /* GoogleSignInSwift */,
 			);
 			productName = Planify;
 			productReference = 4507B05D2B83949F00B0CC65 /* Planify.app */;
@@ -222,6 +230,7 @@
 			mainGroup = 4507B0542B83949E00B0CC65;
 			packageReferences = (
 				4507B0742B839EC200B0CC65 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				45E94DA92B84A52700E05024 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 4507B05E2B83949F00B0CC65 /* Products */;
 			projectDirPath = "";
@@ -321,6 +330,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -375,6 +385,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -392,6 +403,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Planify/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Planify;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -433,6 +445,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Planify/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Planify;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -493,6 +506,14 @@
 				minimumVersion = 10.21.0;
 			};
 		};
+		45E94DA92B84A52700E05024 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -510,6 +531,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4507B0742B839EC200B0CC65 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		45E94DAA2B84A52700E05024 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E94DA92B84A52700E05024 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		45E94DAC2B84A52700E05024 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E94DA92B84A52700E05024 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
