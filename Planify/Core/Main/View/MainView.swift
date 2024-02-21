@@ -7,17 +7,8 @@
 
 import SwiftUI
 
-class SignedInViewModel: ObservableObject {
-    @ObservedObject private var authManager = AuthManager.shared
-    func signOut() {
-        Task {
-            await authManager.signOut()
-        }
-    }
-}
-
-struct SignedInView: View {
-    @ObservedObject var viewModel = SignedInViewModel()
+struct MainView: View {
+    @ObservedObject var viewModel = MainViewModel()
     
     var body: some View {
         Text("Signed in with UID:\(AuthManager.shared.firebaseUser!.uid).")
@@ -41,5 +32,5 @@ struct SignedInView: View {
 }
 
 #Preview {
-    SignedInView(viewModel: SignedInViewModel())
+    MainView(viewModel: MainViewModel())
 }

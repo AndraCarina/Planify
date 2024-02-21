@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-class SignUpViewModel: ObservableObject {
-    @ObservedObject private var authManager = AuthManager.shared
-    func signUp(email: String, password: String) {
-        Task {
-            await authManager.signUp(email: email, password: password)
-        }
-    }
-}
-
 struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""

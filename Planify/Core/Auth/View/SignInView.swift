@@ -7,25 +7,6 @@
 
 import SwiftUI
 
-class SignInViewModel: ObservableObject {
-    @ObservedObject private var authManager = AuthManager.shared
-    func signInWithEmail(email: String, password: String) {
-        Task{
-            await authManager.signInWithEmail(email: email, password: password)
-        }
-    }
-    func signInWithGoogle() {
-        Task {
-            await authManager.signInWithGoogle()
-        }
-    }
-    func signInAnonymously() {
-        Task {
-            await authManager.signInAnonymously()
-        }
-    }
-}
-
 struct SignInView: View {
     @State private var email = ""
     @State private var password = ""

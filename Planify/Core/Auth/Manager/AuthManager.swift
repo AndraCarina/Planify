@@ -9,8 +9,6 @@ import Foundation
 import FirebaseAuth
 import Firebase
 import FirebaseFirestoreSwift
-import GoogleSignIn
-import GoogleSignInSwift
 
 enum AuthState {
     case NOT_SIGNED_IN

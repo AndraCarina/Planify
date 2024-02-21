@@ -13,10 +13,8 @@ struct RootView: View {
         Group {
             if authManager.authState ==  .NOT_SIGNED_IN {
                 SignInView()
-            } else if authManager.authState == .SIGNING_IN {
-                SigningInView()
             } else {
-                SignedInView()
+                StartView()
             }
         }
     }
