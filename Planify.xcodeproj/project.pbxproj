@@ -23,8 +23,9 @@
 		454297632B85EE7D0005EC43 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297622B85EE7D0005EC43 /* MainViewModel.swift */; };
 		454297662B85EF260005EC43 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297652B85EF260005EC43 /* SignInViewModel.swift */; };
 		454297682B85EF310005EC43 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297672B85EF310005EC43 /* SignUpViewModel.swift */; };
+		4542976B2B86018D0005EC43 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542976A2B86018D0005EC43 /* InputFieldView.swift */; };
+		4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542976C2B8612990005EC43 /* AuthButtonView.swift */; };
 		45E94DA42B8479AE00E05024 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA32B8479AE00E05024 /* SignUpView.swift */; };
-		45E94DA62B847B5E00E05024 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA52B847B5E00E05024 /* InputView.swift */; };
 		45E94DA82B847E5900E05024 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DA72B847E5900E05024 /* UserModel.swift */; };
 		45E94DAB2B84A52700E05024 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAA2B84A52700E05024 /* GoogleSignIn */; };
 		45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAC2B84A52700E05024 /* GoogleSignInSwift */; };
@@ -47,8 +48,9 @@
 		454297622B85EE7D0005EC43 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		454297652B85EF260005EC43 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		454297672B85EF310005EC43 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		4542976A2B86018D0005EC43 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		4542976C2B8612990005EC43 /* AuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonView.swift; sourceTree = "<group>"; };
 		45E94DA32B8479AE00E05024 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		45E94DA52B847B5E00E05024 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputView.swift; path = Planify/Core/Auth/View/InputView.swift; sourceTree = SOURCE_ROOT; };
 		45E94DA72B847E5900E05024 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Planify/Core/Auth/View/UserModel.swift; sourceTree = SOURCE_ROOT; };
 		45E94DAE2B84A6DD00E05024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		45E94DB02B84F8E000E05024 /* GoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 		4507B0702B8395F000B0CC65 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				45E94DA52B847B5E00E05024 /* InputView.swift */,
+				454297692B8601770005EC43 /* View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -240,6 +242,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		454297692B8601770005EC43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4542976A2B86018D0005EC43 /* InputFieldView.swift */,
+				4542976C2B8612990005EC43 /* AuthButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		45E94DAF2B84F8CA00E05024 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */,
 				4507B0632B83949F00B0CC65 /* RootView.swift in Sources */,
 				4507B08D2B83A1FD00B0CC65 /* AuthManager.swift in Sources */,
 				4542975A2B85EA540005EC43 /* StartView.swift in Sources */,
@@ -338,8 +350,8 @@
 				4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */,
 				454297682B85EF310005EC43 /* SignUpViewModel.swift in Sources */,
 				45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */,
+				4542976B2B86018D0005EC43 /* InputFieldView.swift in Sources */,
 				4507B0942B83A9AF00B0CC65 /* MainView.swift in Sources */,
-				45E94DA62B847B5E00E05024 /* InputView.swift in Sources */,
 				4507B0902B83A6A200B0CC65 /* SignInView.swift in Sources */,
 				45E94DA82B847E5900E05024 /* UserModel.swift in Sources */,
 				4507B0612B83949F00B0CC65 /* PlanifyApp.swift in Sources */,

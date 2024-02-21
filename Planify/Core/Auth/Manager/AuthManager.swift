@@ -116,6 +116,15 @@ class AuthManager: ObservableObject {
         }
     }
     
+    func resetPassword(email: String) async {
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+        } catch {
+            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+            errorMessage = error.localizedDescription
+        }
+    }
+    
     func fetchUser() async {
         /* Get FirebaseUser, if not logged in, return. */
         guard let firebaseUser = Auth.auth().currentUser else {

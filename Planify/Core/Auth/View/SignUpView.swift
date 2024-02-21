@@ -10,32 +10,44 @@ import SwiftUI
 struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var confirmPassword = ""
+    @State private var fullname = ""
     @ObservedObject var viewModel =  SignUpViewModel()
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        Text("Sign up.")
-        
-        InputView(text: $email,
-                  title: "Email Address",
-                  placeholder: "name@example.com")
-        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-        
-        InputView(text: $password,
-                  title: "Password",
-                  placeholder: "Enter your password",
-                  isSecureField: true)
-        
-        Button {
-            viewModel.signUp(email: email, password: password)
-        } label: {
-            Text("Sign up")
+        VStack {
+            Image(systemName: "house")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 120)
+                .padding(.vertical, 100)
+            
+            InputFieldView(text: $fullname, placeholder: "full name", systemImage: "person.fill")
+                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+            
+            InputFieldView(text: $email, placeholder: "name@example.com", systemImage: "envelope.fill")
+                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+            
+            InputFieldView(text: $password, placeholder: "password", systemImage: "lock.fill", isSecureField: true)
+            
+            InputFieldView(text: $confirmPassword, placeholder: "confirm password", systemImage: "lock.fill", isSecureField: true)
+            
+            AuthButtonView(text: "SIGN UP WITH EMAIL", icon: "arrow.right", color: Color(.systemBlue), clicked: { viewModel.signUp(email: email, password: password) }
+            )
         }
+        
+        Spacer()
         
         Button {
             dismiss()
         } label: {
-            Text("Go back")
+            HStack(spacing: 3){
+                Text("Already have an account?")
+                Text("Sign in")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            }
+            .font(.system(size: 14))
         }
     }
 }
