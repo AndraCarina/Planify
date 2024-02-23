@@ -12,7 +12,7 @@ struct RootView: View {
     var body: some View {
         Group {
             if authManager.authState ==  .NOT_SIGNED_IN {
-                SignInView()
+                WelcomeView()
             } else {
                 StartView()
             }
