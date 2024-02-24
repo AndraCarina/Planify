@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     @ObservedObject private var authManager = AuthManager.shared
+    @State private var selectedTab: Tab = .house
     var body: some View {
         Group {
             if authManager.authState ==  .NOT_SIGNED_IN {

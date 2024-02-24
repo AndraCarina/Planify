@@ -8,29 +8,37 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var viewModel = MainViewModel()
+    @State private var selectedTab: Tab = .house
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
     
     var body: some View {
-        Text("Signed in with UID:\(AuthManager.shared.firebaseUser!.uid).")
-        if AuthManager.shared.authState == .EMAIL_SIGN_IN {
-            Text("Signed in with Email.")
-        } else if AuthManager.shared.authState == .GOOGLE_SIGN_IN {
-            Text("Signed in with Google.")
-        } else if AuthManager.shared.authState == .GUEST_SIGN_IN {
-            Text("Signed in with Guest.")
-        } else {
-            Text("Error")
-        }
-        
-        
-        Button {
-            viewModel.signOut()
-        } label : {
-            Text("Sign out")
+        ZStack {
+            VStack {
+                TabView(selection: $selectedTab) {
+                    ForEach(Tab.allCases, id: \.rawValue) { tab in
+                        switch tab {
+                        case .gearshape: SettingsView().tag(tab)
+                        default: HStack {
+                                    Image(systemName: tab.rawValue)
+                                    Text("\(tab.rawValue.capitalized)")
+                                        .bold()
+                                        .animation(nil, value: selectedTab)
+                                }
+                        }
+                    }
+                }
+            }
+            VStack {
+                Spacer()
+                CustomTabBarView(selectedTab: $selectedTab)
+            }
         }
     }
 }
 
 #Preview {
-    MainView(viewModel: MainViewModel())
+    MainView()
 }

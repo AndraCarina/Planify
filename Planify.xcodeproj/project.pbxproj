@@ -21,9 +21,11 @@
 		4510E9C52B8879030003728D /* AuthBottomNavLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9C42B8879030003728D /* AuthBottomNavLinkView.swift */; };
 		4510E9CA2B887B9E0003728D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9C92B887B9E0003728D /* LoginViewModel.swift */; };
 		4510E9CC2B887BDA0003728D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9CB2B887BDA0003728D /* RegisterViewModel.swift */; };
+		4510E9CE2B89E02F0003728D /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9CD2B89E02F0003728D /* CustomTabBarView.swift */; };
+		4510E9D22B89EA570003728D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9D12B89EA570003728D /* SettingsView.swift */; };
+		4510E9D42B89ECB30003728D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9D32B89ECB30003728D /* SettingsViewModel.swift */; };
 		4542975A2B85EA540005EC43 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297592B85EA540005EC43 /* StartView.swift */; };
 		4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542975B2B85EAED0005EC43 /* LoadingView.swift */; };
-		454297632B85EE7D0005EC43 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297622B85EE7D0005EC43 /* MainViewModel.swift */; };
 		4542976B2B86018D0005EC43 /* AuthInputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542976A2B86018D0005EC43 /* AuthInputFieldView.swift */; };
 		4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542976C2B8612990005EC43 /* AuthButtonView.swift */; };
 		454297712B864DEE0005EC43 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297702B864DED0005EC43 /* WelcomeView.swift */; };
@@ -49,9 +51,11 @@
 		4510E9C42B8879030003728D /* AuthBottomNavLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBottomNavLinkView.swift; sourceTree = "<group>"; };
 		4510E9C92B887B9E0003728D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4510E9CB2B887BDA0003728D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		4510E9CD2B89E02F0003728D /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		4510E9D12B89EA570003728D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4510E9D32B89ECB30003728D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		454297592B85EA540005EC43 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		4542975B2B85EAED0005EC43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		454297622B85EE7D0005EC43 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4542976A2B86018D0005EC43 /* AuthInputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputFieldView.swift; sourceTree = "<group>"; };
 		4542976C2B8612990005EC43 /* AuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonView.swift; sourceTree = "<group>"; };
 		454297702B864DED0005EC43 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -238,7 +242,9 @@
 		4542975E2B85EDF60005EC43 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4510E9CD2B89E02F0003728D /* CustomTabBarView.swift */,
 				4507B0932B83A9AF00B0CC65 /* MainView.swift */,
+				4510E9D12B89EA570003728D /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,7 +252,7 @@
 		4542975F2B85EE510005EC43 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				454297622B85EE7D0005EC43 /* MainViewModel.swift */,
+				4510E9D32B89ECB30003728D /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -363,6 +369,8 @@
 				4507B0632B83949F00B0CC65 /* RootView.swift in Sources */,
 				4507B08D2B83A1FD00B0CC65 /* AuthManager.swift in Sources */,
 				4542975A2B85EA540005EC43 /* StartView.swift in Sources */,
+				4510E9D22B89EA570003728D /* SettingsView.swift in Sources */,
+				4510E9CE2B89E02F0003728D /* CustomTabBarView.swift in Sources */,
 				4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */,
 				454297752B8674B00005EC43 /* RegisterView.swift in Sources */,
 				45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */,
@@ -373,9 +381,9 @@
 				4510E9C52B8879030003728D /* AuthBottomNavLinkView.swift in Sources */,
 				4507B0612B83949F00B0CC65 /* PlanifyApp.swift in Sources */,
 				454297712B864DEE0005EC43 /* WelcomeView.swift in Sources */,
-				454297632B85EE7D0005EC43 /* MainViewModel.swift in Sources */,
 				4510E9C32B8873DD0003728D /* AuthNavLinkView.swift in Sources */,
 				4510E9CA2B887B9E0003728D /* LoginViewModel.swift in Sources */,
+				4510E9D42B89ECB30003728D /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +528,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -562,6 +571,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
