@@ -10,4 +10,6 @@ import Foundation
 struct UserModel: Identifiable, Codable {
     let id: String
     let email: String
+    let joinDate: String
+    let fullname: String
 }

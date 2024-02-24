@@ -47,12 +47,14 @@ class AuthManager: ObservableObject {
         }
     }
     
-    func signUp(email: String, password: String) async {
+    func signUp(email: String, password: String, fullname: String) async {
         do {
             /* Call create user. */
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
+            /* Get current date. */
+            let formattedDate = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
             /* Create user to be encoded. */
-            let user = UserModel(id: result.user.uid, email: email)
+            let user = UserModel(id: result.user.uid, email: email, joinDate: formattedDate, fullname: fullname)
             /* Encode user. */
             let encodedUser = try Firestore.Encoder().encode(user)
             /* Upload encoded user to Firestore. */
@@ -71,12 +73,25 @@ class AuthManager: ObservableObject {
             guard let credential = try await GoogleHelper.getCredential() else { return }
             /* Call sign in with Google. */
             let result = try await Auth.auth().signIn(with: credential)
-            /* Create user to be encoded. */
-            let currentUser = UserModel(id: result.user.uid, email: result.user.email!)
-            /* Encode user. */
-            let encodedUser = try Firestore.Encoder().encode(currentUser)
-            /* Upload encoded user to Firestore. */
-            try await Firestore.firestore().collection("users").document(result.user.uid).setData(encodedUser)
+            /* Check if user already exists. */
+            let docRef = Firestore.firestore().collection("users").document(result.user.uid)
+            do {
+                let document = try await docRef.getDocument()
+                if !document.exists {
+                    /* Get current date. */
+                    let formattedDate = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
+                    /* Create user to be encoded. */
+                    let currentUser = UserModel(id: result.user.uid, email: result.user.email!, joinDate: formattedDate, fullname: result.user.displayName!)
+                    /* Encode user. */
+                    let encodedUser = try Firestore.Encoder().encode(currentUser)
+                    /* Upload encoded user to Firestore. */
+                    try await Firestore.firestore().collection("users").document(result.user.uid).setData(encodedUser)
+                }
+            } catch {
+                print(error.localizedDescription)
+                self.errorMessage = error.localizedDescription
+            }
+
             /* Fetch user data. */
             await fetchUser()
         }
@@ -90,8 +105,10 @@ class AuthManager: ObservableObject {
         do {
             /* Call sign in anonymously. */
             let result = try await Auth.auth().signInAnonymously()
+            /* Get current date. */
+            let formattedDate = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
             /* Create user to be encoded. */
-            let user = UserModel(id: result.user.uid, email: "NA")
+            let user = UserModel(id: result.user.uid, email: "", joinDate: formattedDate, fullname: "")
             /* Encode user. */
             let encodedUser = try Firestore.Encoder().encode(user)
             /* Upload encoded user to Firestore. */

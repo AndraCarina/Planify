@@ -9,9 +9,9 @@ import SwiftUI
 
 let tabs: [TabModel] = [
     TabModel(normalImageName: "paperplane", selectedImageName: "paperplane.fill", selectedImageColor: .blue, selectedView: AnyView(PlansView())),
-    TabModel(normalImageName: "magnifyingglass.circle", selectedImageName: "magnifyingglass.circle.fill", selectedImageColor: .green, selectedView: AnyView(EmptyView())),
-    TabModel(normalImageName: "plus.app", selectedImageName: "plus.app.fill", selectedImageColor: .indigo, selectedView: AnyView(EmptyView())),
-    TabModel(normalImageName: "archivebox", selectedImageName: "archivebox.fill", selectedImageColor: .green, selectedView: AnyView(EmptyView())),
+    TabModel(normalImageName: "magnifyingglass.circle", selectedImageName: "magnifyingglass.circle.fill", selectedImageColor: .green, selectedView: AnyView(SuggestionView())),
+    TabModel(normalImageName: "plus.app", selectedImageName: "plus.app.fill", selectedImageColor: .indigo, selectedView: AnyView(AddPlanView())),
+    TabModel(normalImageName: "archivebox", selectedImageName: "archivebox.fill", selectedImageColor: .red, selectedView: AnyView(HistoryView())),
     TabModel(normalImageName: "gearshape", selectedImageName: "gearshape.fill", selectedImageColor: .orange, selectedView: AnyView(SettingsView())),
 ]
 
@@ -31,7 +31,6 @@ struct MainView: View {
                             .tag(index)
                     }
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
             VStack {
                 Spacer()

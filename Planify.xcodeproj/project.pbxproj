@@ -34,6 +34,9 @@
 		459617D22B8A234E0057D84F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D12B8A234E0057D84F /* UserModel.swift */; };
 		459617D62B8A23FD0057D84F /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D52B8A23FD0057D84F /* TabModel.swift */; };
 		459617DA2B8A29460057D84F /* PlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D92B8A29460057D84F /* PlansView.swift */; };
+		459617DC2B8A2BBD0057D84F /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DB2B8A2BBD0057D84F /* SuggestionView.swift */; };
+		459617DE2B8A2BE40057D84F /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DD2B8A2BE40057D84F /* AddPlanView.swift */; };
+		459617E02B8A2C1B0057D84F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DF2B8A2C1B0057D84F /* HistoryView.swift */; };
 		45E94DAB2B84A52700E05024 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAA2B84A52700E05024 /* GoogleSignIn */; };
 		45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAC2B84A52700E05024 /* GoogleSignInSwift */; };
 		45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DB02B84F8E000E05024 /* GoogleHelper.swift */; };
@@ -66,6 +69,9 @@
 		459617D12B8A234E0057D84F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		459617D52B8A23FD0057D84F /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		459617D92B8A29460057D84F /* PlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansView.swift; sourceTree = "<group>"; };
+		459617DB2B8A2BBD0057D84F /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
+		459617DD2B8A2BE40057D84F /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
+		459617DF2B8A2C1B0057D84F /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		45E94DAE2B84A6DD00E05024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		45E94DB02B84F8E000E05024 /* GoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +245,9 @@
 				4507B0932B83A9AF00B0CC65 /* MainView.swift */,
 				4510E9D12B89EA570003728D /* SettingsView.swift */,
 				459617D92B8A29460057D84F /* PlansView.swift */,
+				459617DB2B8A2BBD0057D84F /* SuggestionView.swift */,
+				459617DD2B8A2BE40057D84F /* AddPlanView.swift */,
+				459617DF2B8A2C1B0057D84F /* HistoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -369,10 +378,12 @@
 				4542975A2B85EA540005EC43 /* StartView.swift in Sources */,
 				4510E9D22B89EA570003728D /* SettingsView.swift in Sources */,
 				4510E9CE2B89E02F0003728D /* CustomTabBarView.swift in Sources */,
+				459617E02B8A2C1B0057D84F /* HistoryView.swift in Sources */,
 				4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */,
 				454297752B8674B00005EC43 /* RegisterView.swift in Sources */,
 				45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */,
 				4542976B2B86018D0005EC43 /* AuthInputFieldView.swift in Sources */,
+				459617DE2B8A2BE40057D84F /* AddPlanView.swift in Sources */,
 				4507B0942B83A9AF00B0CC65 /* MainView.swift in Sources */,
 				459617D62B8A23FD0057D84F /* TabModel.swift in Sources */,
 				4510E9CC2B887BDA0003728D /* RegisterViewModel.swift in Sources */,
@@ -384,6 +395,7 @@
 				459617DA2B8A29460057D84F /* PlansView.swift in Sources */,
 				459617D22B8A234E0057D84F /* UserModel.swift in Sources */,
 				4510E9D42B89ECB30003728D /* SettingsViewModel.swift in Sources */,
+				459617DC2B8A2BBD0057D84F /* SuggestionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

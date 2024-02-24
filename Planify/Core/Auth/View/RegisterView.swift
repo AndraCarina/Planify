@@ -50,7 +50,7 @@ struct RegisterView: View {
                 
                 
                 AuthButtonView(text: "Register account", icon: "plus.app") {
-                    viewModel.signUp(email: email, password: password)
+                    viewModel.signUp(email: email, password: password, fullname: fullname)
                 }
                 .padding(.top, 10)
                 

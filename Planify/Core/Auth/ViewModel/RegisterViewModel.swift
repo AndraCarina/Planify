@@ -10,9 +10,9 @@ import SwiftUI
 
 class RegisterViewModel: ObservableObject {
     @ObservedObject private var authManager = AuthManager.shared
-    func signUp(email: String, password: String) {
+    func signUp(email: String, password: String, fullname: String) {
         Task {
-            await authManager.signUp(email: email, password: password)
+            await authManager.signUp(email: email, password: password, fullname: fullname)
         }
     }
 }
