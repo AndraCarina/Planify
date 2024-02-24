@@ -40,13 +40,13 @@ struct CustomTabBarView: View {
         VStack {
             Rectangle()
                 .frame(height: 1)
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color(UIColor.lightGray))
             HStack {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
                     Spacer()
                     Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
                         .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
-                        .foregroundStyle(selectedTab == tab ? tabColor : Color.gray)
+                        .foregroundStyle(selectedTab == tab ? tabColor : Color(UIColor.lightGray))
                         .font(.system(size: 22))
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.1)) {

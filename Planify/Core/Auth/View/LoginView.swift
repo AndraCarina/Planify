@@ -11,27 +11,26 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @Binding var path: NavigationPath
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel =  LoginViewModel()
     
     var body: some View {
         ZStack {
-            Color("AppBackgroundColor").ignoresSafeArea()
             VStack {
                 Text("Welcome back!")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .foregroundStyle(.white)
                     .font(.system(size: 30))
                     .padding(.top, 20)
                 
                 Text("We're excited to see you again!")
-                    .foregroundStyle(Color(UIColor.lightGray))
+                    .foregroundStyle(colorScheme == .dark ? Color(UIColor.lightGray) : Color(UIColor.darkGray))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 14))
                 
                 HStack {
                     Text("Account Information")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .foregroundStyle(Color(UIColor.lightGray))
+                        .foregroundStyle(colorScheme == .dark ? Color(UIColor.lightGray) : Color(UIColor.darkGray))
                         .font(.system(size: 14))
                         .padding(.leading, 16)
                     Spacer()
@@ -61,7 +60,7 @@ struct LoginView: View {
                 }
                 
                 Text("---- or ----")
-                    .foregroundStyle(Color(UIColor.lightGray))
+                    .foregroundStyle(colorScheme == .dark ? Color(UIColor.lightGray) : Color(UIColor.darkGray))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 14))
                     .padding(.vertical, 20)
@@ -92,7 +91,7 @@ struct LoginView: View {
                     path = NavigationPath()
                 } label: {
                     Image(systemName: "arrow.backward")
-                        .foregroundColor(Color.white)
+                        .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
                 }
             }
         }

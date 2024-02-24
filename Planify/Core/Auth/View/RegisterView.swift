@@ -13,21 +13,20 @@ struct RegisterView: View {
     @State private var confirmPassword = ""
     @State private var fullname = ""
     @Binding var path: NavigationPath
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel =  RegisterViewModel()
     
     var body: some View {
         ZStack {
-            Color("AppBackgroundColor").ignoresSafeArea()
             VStack {
                 Text("Register account")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .foregroundStyle(.white)
                     .font(.system(size: 30))
                     .padding(.top, 20)
                     .padding(.bottom, 1)
                 
                 Text("Please enter the account information below.")
-                    .foregroundStyle(Color(UIColor.lightGray))
+                    .foregroundStyle(colorScheme == .dark ? Color(UIColor.lightGray) : Color(UIColor.darkGray))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 14))
                     .padding(.bottom, 20)
@@ -35,7 +34,7 @@ struct RegisterView: View {
                 HStack {
                     Text("Account Information")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .foregroundStyle(Color(UIColor.lightGray))
+                        .foregroundStyle(colorScheme == .dark ? Color(UIColor.lightGray) : Color(UIColor.darkGray))
                         .font(.system(size: 14))
                         .padding(.leading, 16)
                     Spacer()
@@ -67,7 +66,7 @@ struct RegisterView: View {
                     path = NavigationPath()
                 } label: {
                     Image(systemName: "arrow.backward")
-                        .foregroundColor(Color.white)
+                        .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
                 }
             }
         }

@@ -9,10 +9,7 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        ZStack {
-            Color("AppBackgroundColor").ignoresSafeArea()
-            Text("Loading")
-        }
+        Text("Loading")
     }
 }
 

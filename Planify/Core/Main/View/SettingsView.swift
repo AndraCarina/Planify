@@ -10,10 +10,9 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var viewModel = SettingsViewModel()
     var body: some View {
-        ZStack {
-            Color("AppBackgroundColor").ignoresSafeArea()
+        VStack {
             Text("SettingsView")
-            AuthButtonView(text: "Sign out", icon: "arrow.fill") {
+            AuthButtonView(text: "Sign out", icon: "arrow.left") {
                 viewModel.signOut()
             }
         }
