@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct AddPlanView: View {
+    @ObservedObject var viewModel = AddPlanViewModel()
+
     var body: some View {
-        Text("AddPlanView")
+        VStack {
+            Text("AddPlanView")
+            Button {
+                viewModel.addTrip()
+            } label: {
+                Text("Add trip")
+            }
+        }
     }
 }
 

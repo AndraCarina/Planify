@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct PlansView: View {
+    @ObservedObject private var tripManager = TripManager.shared
+
     var body: some View {
-        Text("PlansView")
+        VStack {
+            ForEach(tripManager.trips) { trip in
+                Text("\(trip.id)")
+            }
+        }
     }
 }
 

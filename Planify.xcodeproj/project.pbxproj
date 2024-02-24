@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4501E2BB2B8A635600F5AE25 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4501E2BA2B8A635600F5AE25 /* TripModel.swift */; };
+		4501E2BD2B8A64A800F5AE25 /* PlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4501E2BC2B8A64A800F5AE25 /* PlanModel.swift */; };
+		4501E2C02B8A65A900F5AE25 /* AddPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4501E2BF2B8A65A900F5AE25 /* AddPlanViewModel.swift */; };
+		4501E2C22B8A6C3800F5AE25 /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4501E2C12B8A6C3800F5AE25 /* TripManager.swift */; };
 		4507B0612B83949F00B0CC65 /* PlanifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B0602B83949F00B0CC65 /* PlanifyApp.swift */; };
 		4507B0632B83949F00B0CC65 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507B0622B83949F00B0CC65 /* RootView.swift */; };
 		4507B0652B8394A000B0CC65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4507B0642B8394A000B0CC65 /* Assets.xcassets */; };
@@ -43,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4501E2BA2B8A635600F5AE25 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		4501E2BC2B8A64A800F5AE25 /* PlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanModel.swift; sourceTree = "<group>"; };
+		4501E2BF2B8A65A900F5AE25 /* AddPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewModel.swift; sourceTree = "<group>"; };
+		4501E2C12B8A6C3800F5AE25 /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
 		4507B05D2B83949F00B0CC65 /* Planify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4507B0602B83949F00B0CC65 /* PlanifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanifyApp.swift; sourceTree = "<group>"; };
 		4507B0622B83949F00B0CC65 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -92,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4501E2C32B8A6C3E00F5AE25 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4501E2C12B8A6C3800F5AE25 /* TripManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		4507B0542B83949E00B0CC65 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +181,8 @@
 			children = (
 				459617D12B8A234E0057D84F /* UserModel.swift */,
 				459617D52B8A23FD0057D84F /* TabModel.swift */,
+				4501E2BA2B8A635600F5AE25 /* TripModel.swift */,
+				4501E2BC2B8A64A800F5AE25 /* PlanModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +251,7 @@
 		4542975D2B85EDE60005EC43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4501E2C32B8A6C3E00F5AE25 /* Manager */,
 				4542975E2B85EDF60005EC43 /* View */,
 				4542975F2B85EE510005EC43 /* ViewModel */,
 			);
@@ -256,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				4510E9D32B89ECB30003728D /* SettingsViewModel.swift */,
+				4501E2BF2B8A65A900F5AE25 /* AddPlanViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -371,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4501E2BB2B8A635600F5AE25 /* TripModel.swift in Sources */,
 				4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */,
 				454297732B8669310005EC43 /* LoginView.swift in Sources */,
 				4507B0632B83949F00B0CC65 /* RootView.swift in Sources */,
@@ -378,6 +399,8 @@
 				4542975A2B85EA540005EC43 /* StartView.swift in Sources */,
 				4510E9D22B89EA570003728D /* SettingsView.swift in Sources */,
 				4510E9CE2B89E02F0003728D /* CustomTabBarView.swift in Sources */,
+				4501E2C22B8A6C3800F5AE25 /* TripManager.swift in Sources */,
+				4501E2BD2B8A64A800F5AE25 /* PlanModel.swift in Sources */,
 				459617E02B8A2C1B0057D84F /* HistoryView.swift in Sources */,
 				4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */,
 				454297752B8674B00005EC43 /* RegisterView.swift in Sources */,
@@ -386,6 +409,7 @@
 				459617DE2B8A2BE40057D84F /* AddPlanView.swift in Sources */,
 				4507B0942B83A9AF00B0CC65 /* MainView.swift in Sources */,
 				459617D62B8A23FD0057D84F /* TabModel.swift in Sources */,
+				4501E2C02B8A65A900F5AE25 /* AddPlanViewModel.swift in Sources */,
 				4510E9CC2B887BDA0003728D /* RegisterViewModel.swift in Sources */,
 				4510E9C52B8879030003728D /* AuthBottomNavLinkView.swift in Sources */,
 				4507B0612B83949F00B0CC65 /* PlanifyApp.swift in Sources */,

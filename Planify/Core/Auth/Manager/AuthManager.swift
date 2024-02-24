@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import FirebaseAuth
 import Firebase
 import FirebaseFirestoreSwift
@@ -26,6 +27,7 @@ class AuthManager: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var firebaseUser: FirebaseAuth.User?
     @Published var appUser: UserModel?
+    @ObservedObject private var tripManager = TripManager.shared
     
     private init() {
         Task {
@@ -161,6 +163,8 @@ class AuthManager: ObservableObject {
         /* Set local FirebaseUser and AppUser. */
         self.firebaseUser = firebaseUser
         self.appUser = try? snapshot.data(as: UserModel.self)
+        
+        await tripManager.fetchTrips(userId: firebaseUser.uid)
         
         /* Set authState depending on the provider. */
         guard let providerID = firebaseUser.providerData.first?.providerID else {
