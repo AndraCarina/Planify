@@ -50,4 +50,16 @@ class TripManager: ObservableObject {
             
         }
     }
+    
+    func deleteTrip(trip: TripModel) async {
+        do {
+            try await Firestore.firestore().collection("trips").document(trip.id).delete()
+            if let index = trips.firstIndex(where: { $0.id == trip.id }) {
+                trips.remove(at: index)
+            }
+        } catch {
+            
+        }
+
+    }
 }

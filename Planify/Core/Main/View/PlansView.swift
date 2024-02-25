@@ -33,6 +33,14 @@ struct PlansView: View {
                     TripListView(trip: trip)
                         .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                 }
+                .onDelete(perform: { indexSet in
+                    indexSet.forEach { index in
+                        let trip = viewModel.filteredTrips(searchTerm: searchTerm)[index]
+                        Task {
+                            await tripManager.deleteTrip(trip: trip)
+                        }
+                    }
+                })
             }
             .frame( maxWidth: .infinity)
             .listStyle(.plain)
