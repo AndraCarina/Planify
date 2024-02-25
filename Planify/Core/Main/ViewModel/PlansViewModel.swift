@@ -15,4 +15,10 @@ class PlansViewModel: ObservableObject {
         guard !searchTerm.isEmpty else {return tripManager.trips}
         return tripManager.trips.filter { $0.name.localizedCaseInsensitiveContains(searchTerm) }
     }
+    
+    func deleteTrip(trip: TripModel) {
+        Task {
+            await tripManager.deleteTrip(trip: trip)
+        }
+    }
 }

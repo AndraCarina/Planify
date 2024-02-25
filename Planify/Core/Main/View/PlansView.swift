@@ -36,9 +36,7 @@ struct PlansView: View {
                 .onDelete(perform: { indexSet in
                     indexSet.forEach { index in
                         let trip = viewModel.filteredTrips(searchTerm: searchTerm)[index]
-                        Task {
-                            await tripManager.deleteTrip(trip: trip)
-                        }
+                        viewModel.deleteTrip(trip: trip)
                     }
                 })
             }
