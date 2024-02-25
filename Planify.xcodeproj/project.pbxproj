@@ -28,6 +28,11 @@
 		4510E9CE2B89E02F0003728D /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9CD2B89E02F0003728D /* CustomTabBarView.swift */; };
 		4510E9D22B89EA570003728D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9D12B89EA570003728D /* SettingsView.swift */; };
 		4510E9D42B89ECB30003728D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510E9D32B89ECB30003728D /* SettingsViewModel.swift */; };
+		451853A12B8B2A9200CF78DC /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451853A02B8B2A9200CF78DC /* TripListView.swift */; };
+		451853A82B8B35FF00CF78DC /* PlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451853A72B8B35FF00CF78DC /* PlansViewModel.swift */; };
+		451853AB2B8B3AE000CF78DC /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451853AA2B8B3AE000CF78DC /* ImageCache.swift */; };
+		451853AD2B8B3B2300CF78DC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451853AC2B8B3B2300CF78DC /* ImageLoader.swift */; };
+		451853AF2B8B3B6000CF78DC /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451853AE2B8B3B6000CF78DC /* RemoteImageView.swift */; };
 		4542975A2B85EA540005EC43 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297592B85EA540005EC43 /* StartView.swift */; };
 		4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542975B2B85EAED0005EC43 /* LoadingView.swift */; };
 		4542976B2B86018D0005EC43 /* AuthInputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542976A2B86018D0005EC43 /* AuthInputFieldView.swift */; };
@@ -67,6 +72,11 @@
 		4510E9CD2B89E02F0003728D /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		4510E9D12B89EA570003728D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4510E9D32B89ECB30003728D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		451853A02B8B2A9200CF78DC /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
+		451853A72B8B35FF00CF78DC /* PlansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansViewModel.swift; sourceTree = "<group>"; };
+		451853AA2B8B3AE000CF78DC /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		451853AC2B8B3B2300CF78DC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		451853AE2B8B3B6000CF78DC /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		454297592B85EA540005EC43 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		4542975B2B85EAED0005EC43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4542976A2B86018D0005EC43 /* AuthInputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputFieldView.swift; sourceTree = "<group>"; };
@@ -231,6 +241,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		451853A92B8B3AD700CF78DC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				451853AA2B8B3AE000CF78DC /* ImageCache.swift */,
+				451853AC2B8B3B2300CF78DC /* ImageLoader.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		454297572B85EA190005EC43 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +270,7 @@
 		4542975D2B85EDE60005EC43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				451853A92B8B3AD700CF78DC /* Helper */,
 				4501E2C32B8A6C3E00F5AE25 /* Manager */,
 				4542975E2B85EDF60005EC43 /* View */,
 				4542975F2B85EE510005EC43 /* ViewModel */,
@@ -276,6 +296,7 @@
 			children = (
 				4510E9D32B89ECB30003728D /* SettingsViewModel.swift */,
 				4501E2BF2B8A65A900F5AE25 /* AddPlanViewModel.swift */,
+				451853A72B8B35FF00CF78DC /* PlansViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -297,6 +318,8 @@
 				4542976A2B86018D0005EC43 /* AuthInputFieldView.swift */,
 				4510E9C22B8873DD0003728D /* AuthNavLinkView.swift */,
 				4510E9CD2B89E02F0003728D /* CustomTabBarView.swift */,
+				451853A02B8B2A9200CF78DC /* TripListView.swift */,
+				451853AE2B8B3B6000CF78DC /* RemoteImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,19 +416,24 @@
 			files = (
 				4501E2BB2B8A635600F5AE25 /* TripModel.swift in Sources */,
 				4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */,
+				451853AB2B8B3AE000CF78DC /* ImageCache.swift in Sources */,
 				454297732B8669310005EC43 /* LoginView.swift in Sources */,
 				4507B0632B83949F00B0CC65 /* RootView.swift in Sources */,
+				451853AD2B8B3B2300CF78DC /* ImageLoader.swift in Sources */,
 				4507B08D2B83A1FD00B0CC65 /* AuthManager.swift in Sources */,
 				4542975A2B85EA540005EC43 /* StartView.swift in Sources */,
 				4510E9D22B89EA570003728D /* SettingsView.swift in Sources */,
 				4510E9CE2B89E02F0003728D /* CustomTabBarView.swift in Sources */,
 				4501E2C22B8A6C3800F5AE25 /* TripManager.swift in Sources */,
 				4501E2BD2B8A64A800F5AE25 /* PlanModel.swift in Sources */,
+				451853A82B8B35FF00CF78DC /* PlansViewModel.swift in Sources */,
 				459617E02B8A2C1B0057D84F /* HistoryView.swift in Sources */,
 				4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */,
 				454297752B8674B00005EC43 /* RegisterView.swift in Sources */,
 				45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */,
 				4542976B2B86018D0005EC43 /* AuthInputFieldView.swift in Sources */,
+				451853AF2B8B3B6000CF78DC /* RemoteImageView.swift in Sources */,
+				451853A12B8B2A9200CF78DC /* TripListView.swift in Sources */,
 				459617DE2B8A2BE40057D84F /* AddPlanView.swift in Sources */,
 				4507B0942B83A9AF00B0CC65 /* MainView.swift in Sources */,
 				459617D62B8A23FD0057D84F /* TabModel.swift in Sources */,

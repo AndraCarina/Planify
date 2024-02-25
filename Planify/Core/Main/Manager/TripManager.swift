@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import FirebaseFirestore
+import URLImage
 
 @MainActor
 class TripManager: ObservableObject {
@@ -41,6 +42,10 @@ class TripManager: ObservableObject {
             
             /* Update the trips property with the fetched trips. */
             self.trips = trips
+            
+            for trip in self.trips {
+                let _ = RemoteImageView(url: trip.photoURL)
+            }
         } catch {
             
         }

@@ -16,6 +16,7 @@ let tabs: [TabModel] = [
 ]
 
 struct MainView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State private var selectedTabIndex: Int = 0
     
     init() {
@@ -35,6 +36,7 @@ struct MainView: View {
             VStack {
                 Spacer()
                 CustomTabBarView(selectedTabIndex: $selectedTabIndex, tabs: tabs)
+                    .background(colorScheme == .dark ? Color(.black) : Color(.white))
             }
         }
     }
