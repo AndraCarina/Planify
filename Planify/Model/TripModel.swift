@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TripModel: Identifiable, Codable {
+struct TripModel: Identifiable, Codable, Hashable {
     let id: String
     let userId: String
     let name: String

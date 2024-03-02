@@ -31,9 +31,7 @@ struct PlansView: View {
         NavigationStack(path: $path){	
             List {
                 ForEach(viewModel.filteredTrips(searchTerm: searchTerm)) { trip in
-                    NavigationLink {
-                        DetailPlanView(trip: trip, path: $path)
-                    } label: {
+                    NavigationLink(value: trip) {
                         TripListView(trip: trip)
                     }
                     .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
@@ -49,6 +47,10 @@ struct PlansView: View {
             .listStyle(.plain)
             .navigationTitle("Upcoming trips")
             .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always))
+            .navigationDestination(for: TripModel.self) {trip in
+                DetailPlanView(trip: trip, path: $path)
+            }
+            
         }
     }
 }

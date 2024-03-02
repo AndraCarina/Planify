@@ -31,7 +31,38 @@ struct DetailPlanView: View {
             
             Spacer()
         }
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading){
+                Button {
+                    path = NavigationPath()
+                } label: {
+                    ZStack{
+                        Circle()
+                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.black) : Color(UIColor.white))
+                            .scaleEffect(1.5)
+                            .opacity(0.5)
+                        Image(systemName: "arrow.backward")
+                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
+                    }
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing){
+                Button {
+
+                } label: {
+                    ZStack{
+                        Circle()
+                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.black) : Color(UIColor.white))
+                            .scaleEffect(3)
+                            .opacity(0.5)
+                        Image(systemName: "ellipsis")
+                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
+                    }
+                }
+            }
+        }
     }
 }
 
