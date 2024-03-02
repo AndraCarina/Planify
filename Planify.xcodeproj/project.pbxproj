@@ -46,6 +46,9 @@
 		459617DC2B8A2BBD0057D84F /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DB2B8A2BBD0057D84F /* SuggestionView.swift */; };
 		459617DE2B8A2BE40057D84F /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DD2B8A2BE40057D84F /* AddPlanView.swift */; };
 		459617E02B8A2C1B0057D84F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DF2B8A2C1B0057D84F /* HistoryView.swift */; };
+		45CA5FD12B9304A2003539C5 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD02B9304A2003539C5 /* ImagePickerView.swift */; };
+		45CA5FD32B9311DF003539C5 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD22B9311DF003539C5 /* ImagePickerViewModel.swift */; };
+		45CA5FD52B93324B003539C5 /* DetailPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD42B93324B003539C5 /* DetailPlanView.swift */; };
 		45E94DAB2B84A52700E05024 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAA2B84A52700E05024 /* GoogleSignIn */; };
 		45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAC2B84A52700E05024 /* GoogleSignInSwift */; };
 		45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DB02B84F8E000E05024 /* GoogleHelper.swift */; };
@@ -90,6 +93,9 @@
 		459617DB2B8A2BBD0057D84F /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		459617DD2B8A2BE40057D84F /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
 		459617DF2B8A2C1B0057D84F /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		45CA5FD02B9304A2003539C5 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		45CA5FD22B9311DF003539C5 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
+		45CA5FD42B93324B003539C5 /* DetailPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlanView.swift; sourceTree = "<group>"; };
 		45E94DAE2B84A6DD00E05024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		45E94DB02B84F8E000E05024 /* GoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +149,7 @@
 				4507B0702B8395F000B0CC65 /* Components */,
 				4507B0712B8395F800B0CC65 /* Core */,
 				4507B0722B83960400B0CC65 /* Model */,
+				45CA5FCE2B92F62F003539C5 /* Utilities */,
 				4507B0642B8394A000B0CC65 /* Assets.xcassets */,
 				4507B0662B8394A000B0CC65 /* Planify.entitlements */,
 				4507B0672B8394A000B0CC65 /* Preview Content */,
@@ -244,8 +251,6 @@
 		451853A92B8B3AD700CF78DC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				451853AA2B8B3AE000CF78DC /* ImageCache.swift */,
-				451853AC2B8B3B2300CF78DC /* ImageLoader.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -287,6 +292,8 @@
 				459617DB2B8A2BBD0057D84F /* SuggestionView.swift */,
 				459617DD2B8A2BE40057D84F /* AddPlanView.swift */,
 				459617DF2B8A2C1B0057D84F /* HistoryView.swift */,
+				45CA5FD02B9304A2003539C5 /* ImagePickerView.swift */,
+				45CA5FD42B93324B003539C5 /* DetailPlanView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 		4542975F2B85EE510005EC43 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				45CA5FD22B9311DF003539C5 /* ImagePickerViewModel.swift */,
 				4510E9D32B89ECB30003728D /* SettingsViewModel.swift */,
 				4501E2BF2B8A65A900F5AE25 /* AddPlanViewModel.swift */,
 				451853A72B8B35FF00CF78DC /* PlansViewModel.swift */,
@@ -322,6 +330,23 @@
 				451853AE2B8B3B6000CF78DC /* RemoteImageView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		45CA5FCE2B92F62F003539C5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				45CA5FCF2B92F653003539C5 /* ImageCaching */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		45CA5FCF2B92F653003539C5 /* ImageCaching */ = {
+			isa = PBXGroup;
+			children = (
+				451853AC2B8B3B2300CF78DC /* ImageLoader.swift */,
+				451853AA2B8B3AE000CF78DC /* ImageCache.swift */,
+			);
+			path = ImageCaching;
 			sourceTree = "<group>";
 		};
 		45E94DAF2B84F8CA00E05024 /* Helper */ = {
@@ -414,10 +439,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45CA5FD52B93324B003539C5 /* DetailPlanView.swift in Sources */,
 				4501E2BB2B8A635600F5AE25 /* TripModel.swift in Sources */,
 				4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */,
+				45CA5FD32B9311DF003539C5 /* ImagePickerViewModel.swift in Sources */,
 				451853AB2B8B3AE000CF78DC /* ImageCache.swift in Sources */,
 				454297732B8669310005EC43 /* LoginView.swift in Sources */,
+				45CA5FD12B9304A2003539C5 /* ImagePickerView.swift in Sources */,
 				4507B0632B83949F00B0CC65 /* RootView.swift in Sources */,
 				451853AD2B8B3B2300CF78DC /* ImageLoader.swift in Sources */,
 				4507B08D2B83A1FD00B0CC65 /* AuthManager.swift in Sources */,

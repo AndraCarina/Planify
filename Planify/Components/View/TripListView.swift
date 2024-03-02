@@ -22,11 +22,6 @@ struct TripListView: View {
                 Text(trip.name)
                     .font(.title)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Text(trip.location)
-                    .font(.subheadline)
-                    .padding(.bottom, 10)
-                Text(trip.startDate + "-" + trip.endDate)
-                    .font(.subheadline)
             }
             
             Spacer()

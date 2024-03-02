@@ -9,14 +9,60 @@ import SwiftUI
 
 struct AddPlanView: View {
     @ObservedObject var viewModel = AddPlanViewModel()
+    @State private var path = NavigationPath()
+    @State private var tripName = ""
+    @State private var location = ""
+    @State private var startDate = Date()
+    @State private var endDate = Date().addingTimeInterval(86400)
+    @State private var photoURL = ""
 
     var body: some View {
-        VStack {
-            Text("AddPlanView")
-            Button {
-                viewModel.addTrip()
-            } label: {
-                Text("Add trip")
+        NavigationStack(path: $path) {
+            VStack {
+                Button {
+                    path.append("ImagePickerView")
+                } label: {
+                    if photoURL.isEmpty {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFit()
+                            .scaleEffect(0.8)
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+                            .clipped()
+                    } else {
+                        RemoteImageView(url: photoURL)
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+                            .clipped()
+                    }
+                }
+                
+                TextField("Trip Name", text: $tripName)
+                    .padding()
+                    .font(.title)
+                
+                TextField("Location", text: $location)
+                    .padding()
+                    .font(.subheadline)
+                
+                DatePicker("Select start date", selection: $startDate, displayedComponents: .date)
+                    .padding()
+                
+                DatePicker("Select end date", selection: $endDate, displayedComponents: .date)
+                    .padding()
+                
+                AuthButtonView(text: "Add trip", icon: "plus") {
+                    viewModel.addTrip(tripName: tripName, location: location, photoURL: photoURL, startDate: startDate, endDate: endDate)
+                }
+                
+                Spacer()
+            }
+            .ignoresSafeArea()
+            .navigationDestination(for: String.self) { value in
+                switch value {
+                    case "ImagePickerView": ImagePickerView(path: $path, photoURL: $photoURL)
+                    default: Text("View not found")
+                }
             }
         }
     }

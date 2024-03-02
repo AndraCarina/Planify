@@ -23,15 +23,20 @@ import SwiftUI
 
 struct PlansView: View {
     @State private var searchTerm = ""
+    @State private var path = NavigationPath()
     @ObservedObject private var tripManager = TripManager.shared
     @ObservedObject private var viewModel = PlansViewModel()
 
     var body: some View {
-        NavigationStack {	
+        NavigationStack(path: $path){	
             List {
                 ForEach(viewModel.filteredTrips(searchTerm: searchTerm)) { trip in
-                    TripListView(trip: trip)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+                    NavigationLink {
+                        DetailPlanView(trip: trip, path: $path)
+                    } label: {
+                        TripListView(trip: trip)
+                    }
+                    .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                 }
                 .onDelete(perform: { indexSet in
                     indexSet.forEach { index in
