@@ -15,21 +15,32 @@ struct DetailPlanView: View {
     
     var body: some View {
         VStack {
-            RemoteImageView(url: trip.photoURL)
-                .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
-                .clipped()
-            
-            Text(trip.name)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            
-            Text(trip.location)
-                .font(.subheadline)
-            
-            Text(trip.startDate + "-" + trip.endDate)
-                .font(.subheadline)
-            
+            ZStack {
+                RemoteImageView(url: trip.photoURL)
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+                    .clipped()
+                    .brightness(-0.2)
+                    .blur(radius: 5.0, opaque: true)
+                VStack {
+                    Text(trip.name)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .foregroundStyle(Color.white)
+                        .shadow(color: .black, radius: 1)
+                    
+                    Text(trip.location)
+                        .font(.subheadline)
+                        .foregroundStyle(Color.white)
+                        .shadow(color: .black, radius: 1)
+                    
+                    Text(trip.startDate + "-" + trip.endDate)
+                        .font(.subheadline)
+                        .foregroundStyle(Color.white)
+                        .shadow(color: .black, radius: 1)
+                }
+                .padding(.top, 300)
+            }
             Spacer()
         }
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
