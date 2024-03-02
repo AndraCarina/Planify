@@ -49,6 +49,7 @@
 		45CA5FD12B9304A2003539C5 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD02B9304A2003539C5 /* ImagePickerView.swift */; };
 		45CA5FD32B9311DF003539C5 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD22B9311DF003539C5 /* ImagePickerViewModel.swift */; };
 		45CA5FD52B93324B003539C5 /* DetailPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD42B93324B003539C5 /* DetailPlanView.swift */; };
+		45CA5FD72B9394EF003539C5 /* DetailPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD62B9394EF003539C5 /* DetailPlanViewModel.swift */; };
 		45E94DAB2B84A52700E05024 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAA2B84A52700E05024 /* GoogleSignIn */; };
 		45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAC2B84A52700E05024 /* GoogleSignInSwift */; };
 		45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DB02B84F8E000E05024 /* GoogleHelper.swift */; };
@@ -96,6 +97,7 @@
 		45CA5FD02B9304A2003539C5 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		45CA5FD22B9311DF003539C5 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
 		45CA5FD42B93324B003539C5 /* DetailPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlanView.swift; sourceTree = "<group>"; };
+		45CA5FD62B9394EF003539C5 /* DetailPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlanViewModel.swift; sourceTree = "<group>"; };
 		45E94DAE2B84A6DD00E05024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		45E94DB02B84F8E000E05024 /* GoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,6 +307,7 @@
 				4510E9D32B89ECB30003728D /* SettingsViewModel.swift */,
 				4501E2BF2B8A65A900F5AE25 /* AddPlanViewModel.swift */,
 				451853A72B8B35FF00CF78DC /* PlansViewModel.swift */,
+				45CA5FD62B9394EF003539C5 /* DetailPlanViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				4510E9C32B8873DD0003728D /* AuthNavLinkView.swift in Sources */,
 				4510E9CA2B887B9E0003728D /* LoginViewModel.swift in Sources */,
 				459617DA2B8A29460057D84F /* PlansView.swift in Sources */,
+				45CA5FD72B9394EF003539C5 /* DetailPlanViewModel.swift in Sources */,
 				459617D22B8A234E0057D84F /* UserModel.swift in Sources */,
 				4510E9D42B89ECB30003728D /* SettingsViewModel.swift in Sources */,
 				459617DC2B8A2BBD0057D84F /* SuggestionView.swift in Sources */,

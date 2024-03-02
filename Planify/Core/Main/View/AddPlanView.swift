@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddPlanView: View {
+    @SceneStorage("selectedTabIndex") var selectedTabIndex: Int = 0
     @ObservedObject var viewModel = AddPlanViewModel()
     @State private var path = NavigationPath()
     @State private var tripName = ""
@@ -53,6 +54,9 @@ struct AddPlanView: View {
                 
                 AuthButtonView(text: "Add trip", icon: "plus") {
                     viewModel.addTrip(tripName: tripName, location: location, photoURL: photoURL, startDate: startDate, endDate: endDate)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        selectedTabIndex = 0
+                    }
                 }
                 
                 Spacer()

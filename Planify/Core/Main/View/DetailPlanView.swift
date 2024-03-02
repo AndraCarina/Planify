@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailPlanView: View {
     let trip: TripModel
     @Binding var path: NavigationPath
+    @ObservedObject var viewModel = DetailPlanViewModel()
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -42,21 +43,34 @@ struct DetailPlanView: View {
                         Circle()
                             .foregroundStyle(colorScheme == .dark ? Color(UIColor.black) : Color(UIColor.white))
                             .scaleEffect(1.5)
-                            .opacity(0.5)
+                            .opacity(0.7)
                         Image(systemName: "arrow.backward")
                             .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
                     }
                 }
             }
             ToolbarItem(placement: .topBarTrailing){
-                Button {
-
+                Menu {
+                    VStack {
+                        Button {
+                            viewModel.markTripFinished(trip: trip)
+                            path = NavigationPath()
+                        } label: {
+                            Text("Mark as finished")
+                        }
+                        
+                        Button(role: .destructive){
+                            path = NavigationPath()
+                        } label: {
+                            Text("Delete trip")
+                        }
+                    }
                 } label: {
                     ZStack{
                         Circle()
                             .foregroundStyle(colorScheme == .dark ? Color(UIColor.black) : Color(UIColor.white))
                             .scaleEffect(3)
-                            .opacity(0.5)
+                            .opacity(0.7)
                         Image(systemName: "ellipsis")
                             .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
                     }

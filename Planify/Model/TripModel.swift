@@ -15,5 +15,5 @@ struct TripModel: Identifiable, Codable, Hashable {
     let photoURL: String
     let startDate: String
     let endDate: String
-    let isFinished: String
+    var isFinished: String
 }

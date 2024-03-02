@@ -73,4 +73,18 @@ class TripManager: ObservableObject {
             
         }
     }
+    
+    func updateTrip(modifiedTrip: TripModel) async {
+        do {
+            let encodedTrip = try Firestore.Encoder().encode(modifiedTrip)
+            
+            try await Firestore.firestore().collection("trips").document(modifiedTrip.id).setData(encodedTrip)
+            
+            if let index = trips.firstIndex(where: { $0.id == modifiedTrip.id }) {
+                trips[index] = modifiedTrip
+            }
+        } catch {
+            
+        }
+    }
 }
