@@ -7,22 +7,18 @@
 
 import SwiftUI
 
-struct DetailPlanView: View {
+struct TripHeaderView: View {
     let trip: TripModel
-    @Binding var path: NavigationPath
-    @ObservedObject var viewModel = DetailPlanViewModel()
-    @Environment(\.colorScheme) var colorScheme
-    
     var body: some View {
-        VStack {
-            ZStack {
-                RemoteImageView(url: trip.photoURL)
-                    .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
-                    .clipped()
-                    .brightness(-0.2)
-                    .blur(radius: 5.0, opaque: true)
+        RemoteImageView(url: trip.photoURL)
+            .scaledToFill()
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+            .clipped()
+            .brightness(-0.2)
+            .blur(radius: 5.0, opaque: true)
+            .overlay {
                 VStack {
+                    Spacer()
                     Text(trip.name)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -38,9 +34,21 @@ struct DetailPlanView: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.white)
                         .shadow(color: .black, radius: 1)
+                        .padding(.bottom, 20)
                 }
-                .padding(.top, 300)
             }
+    }
+}
+
+struct DetailPlanView: View {
+    let trip: TripModel
+    @Binding var path: NavigationPath
+    @ObservedObject var viewModel = DetailPlanViewModel()
+    @Environment(\.colorScheme) var colorScheme
+    
+    var body: some View {
+        VStack {
+            TripHeaderView(trip: trip)
             Spacer()
         }
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
