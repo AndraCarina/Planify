@@ -50,14 +50,7 @@ struct DetailPlanView: View {
                 Button {
                     path = NavigationPath()
                 } label: {
-                    ZStack{
-                        Circle()
-                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.black) : Color(UIColor.white))
-                            .scaleEffect(1.5)
-                            .opacity(0.7)
-                        Image(systemName: "arrow.backward")
-                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
-                    }
+                    ToolbarButtonView(imageName: "arrow.backward")
                 }
             }
             ToolbarItem(placement: .topBarTrailing){
@@ -77,14 +70,7 @@ struct DetailPlanView: View {
                         }
                     }
                 } label: {
-                    ZStack{
-                        Circle()
-                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.black) : Color(UIColor.white))
-                            .scaleEffect(3)
-                            .opacity(0.7)
-                        Image(systemName: "ellipsis")
-                            .foregroundStyle(colorScheme == .dark ? Color(UIColor.white) : Color(UIColor.black))
-                    }
+                    ToolbarButtonView(imageName: "ellipsis")
                 }
             }
         }
