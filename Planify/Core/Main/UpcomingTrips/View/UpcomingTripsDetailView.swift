@@ -51,13 +51,24 @@ struct UpcomingTripsDetailView: View {
         VStack {
             TripHeaderView(trip: trip)
             List {
-                ForEach(viewModel.filteredPlans(trip: trip)) { plan in
-                    NavigationLink(value: plan) {
-                        Text(plan.name)
+                let uniqueStartDates = viewModel.getSetOfStartDates(trip: trip)
+                ForEach(uniqueStartDates, id: \.self) { uniqueStartDate in
+                    Section(header: Text("\(uniqueStartDate)")) {
+                        ForEach(viewModel.filteredPlansByDate(trip: trip, date: uniqueStartDate)) { plan in
+                            NavigationLink(value: plan) {
+                                HStack {
+                                    Text(plan.name)
+                                    Spacer()
+                                    Text(viewModel.convertDateToTime(date: plan.startDate))
+                                }
+                            }
+                            .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+                        }
                     }
-                    .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                 }
             }
+            .frame(maxWidth: .infinity)
+            .listStyle(.plain)
             Spacer()
         }
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

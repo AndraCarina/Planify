@@ -29,7 +29,7 @@ struct UpcomingTripsView: View {
                     }
                 })
             }
-            .frame( maxWidth: .infinity)
+            .frame(maxWidth: .infinity)
             .listStyle(.plain)
             .navigationTitle("Upcoming trips")
             .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always))
