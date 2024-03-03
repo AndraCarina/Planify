@@ -7,6 +7,29 @@
 
 import Foundation
 
+enum PlanType: String, Codable, CaseIterable {
+    case food
+    case transport
+    
+    var systemImage: String {
+        switch self {
+        case .food:
+            return "fork.knife"
+        case .transport:
+            return "airplane"
+        }
+    }
+    
+    var typeName: String {
+        switch self {
+        case .food:
+            return "Food"
+        case .transport:
+            return "Transport"
+        }
+    }
+}
+
 struct PlanModel: Identifiable, Codable, Hashable {
     let id: String
     let userId: String
@@ -15,4 +38,5 @@ struct PlanModel: Identifiable, Codable, Hashable {
     let location: String
     let photoURL: String
     let startDate: Date
+    let type: PlanType
 }

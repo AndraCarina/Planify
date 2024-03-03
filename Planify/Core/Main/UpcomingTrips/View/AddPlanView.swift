@@ -14,6 +14,9 @@ struct AddPlanView: View {
     @State private var startDate = Date()
     @State private var endDate = Date().addingTimeInterval(86400)
     @State private var photoURL = ""
+    @State private var planType: PlanType = .food
+    @State private var categories: [PlanType] = [.food, .transport]
+
     @Binding var path: NavigationPath
     @ObservedObject private var viewModel = AddPlanViewModel()
     var body: some View {
@@ -29,8 +32,17 @@ struct AddPlanView: View {
             DatePicker("Select start date", selection: $startDate, in: trip.startDate...trip.endDate)
                 .padding()
             
+            Picker("Select plan type", selection: $planType) {
+                ForEach(categories, id: \.self) { type in
+                    HStack {
+                        Image(systemName: type.systemImage)
+                    }
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle()) // You can use other picker styles if needed
+            
             AuthButtonView(text: "Add plan", icon: "plus") {
-                viewModel.addPlan(name: planName, location: location, photoURL: "", startDate: startDate, trip: trip)
+                viewModel.addPlan(name: planName, location: location, photoURL: "", startDate: startDate, trip: trip, type: planType)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     path.removeLast()
                 }

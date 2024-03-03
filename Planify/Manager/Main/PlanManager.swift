@@ -22,11 +22,11 @@ class PlanManager: ObservableObject {
         
     }
     
-    func addPlan(name: String, location: String, photoURL: String, startDate: Date, trip: TripModel) async {
+    func addPlan(name: String, location: String, photoURL: String, startDate: Date, trip: TripModel, type: PlanType) async {
         do {
             let uniqueID = Firestore.firestore().collection("plans").document().documentID
             
-            let plan = PlanModel(id: uniqueID, userId: AuthManager.shared.firebaseUser!.uid, tripId: trip.id, name: name, location: location, photoURL: photoURL, startDate: startDate)
+            let plan = PlanModel(id: uniqueID, userId: AuthManager.shared.firebaseUser!.uid, tripId: trip.id, name: name, location: location, photoURL: photoURL, startDate: startDate, type: type)
             
             let encodedPlan = try Firestore.Encoder().encode(plan)
             

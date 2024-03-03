@@ -57,6 +57,10 @@ struct UpcomingTripsDetailView: View {
                         ForEach(viewModel.filteredPlansByDate(trip: trip, date: uniqueStartDate)) { plan in
                             NavigationLink(value: plan) {
                                 HStack {
+                                    Image(systemName: plan.type.systemImage)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 20, height: 20)
                                     Text(plan.name)
                                     Spacer()
                                     Text(viewModel.convertDateToTime(date: plan.startDate))

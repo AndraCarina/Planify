@@ -43,5 +43,5 @@ struct PlanDetailView: View {
 }
 
 #Preview {
-    PlanDetailView(plan: PlanModel(id: "123", userId: "123", tripId: "123", name: "Resturant", location: "RestaurantLocation", photoURL: "", startDate: Date.now), path: .constant(NavigationPath()))
+    PlanDetailView(plan: PlanModel(id: "123", userId: "123", tripId: "123", name: "Resturant", location: "RestaurantLocation", photoURL: "", startDate: Date.now, type: PlanType.food), path: .constant(NavigationPath()))
 }
