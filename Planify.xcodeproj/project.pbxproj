@@ -54,6 +54,11 @@
 		45E94DAD2B84A52700E05024 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45E94DAC2B84A52700E05024 /* GoogleSignInSwift */; };
 		45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E94DB02B84F8E000E05024 /* GoogleHelper.swift */; };
 		45FE8F7B2B9459E50096523C /* ToolbarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE8F7A2B9459E40096523C /* ToolbarButtonView.swift */; };
+		45FE8F922B9476C40096523C /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE8F912B9476C40096523C /* AddPlanView.swift */; };
+		45FE8F942B947CE00096523C /* PlanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE8F932B947CE00096523C /* PlanManager.swift */; };
+		45FE8F962B947F6D0096523C /* AddPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE8F952B947F6D0096523C /* AddPlanViewModel.swift */; };
+		45FE8F982B9482880096523C /* PlanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE8F972B9482880096523C /* PlanDetailView.swift */; };
+		45FE8F9A2B9484DB0096523C /* PlanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE8F992B9484DB0096523C /* PlanDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +107,11 @@
 		45E94DAE2B84A6DD00E05024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		45E94DB02B84F8E000E05024 /* GoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleHelper.swift; sourceTree = "<group>"; };
 		45FE8F7A2B9459E40096523C /* ToolbarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonView.swift; sourceTree = "<group>"; };
+		45FE8F912B9476C40096523C /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
+		45FE8F932B947CE00096523C /* PlanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanManager.swift; sourceTree = "<group>"; };
+		45FE8F952B947F6D0096523C /* AddPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewModel.swift; sourceTree = "<group>"; };
+		45FE8F972B9482880096523C /* PlanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailView.swift; sourceTree = "<group>"; };
+		45FE8F992B9484DB0096523C /* PlanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,10 +265,10 @@
 		4542975D2B85EDE60005EC43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				45FE8F8E2B94747B0096523C /* ArchivedTrips */,
-				45FE8F8B2B94745F0096523C /* Settings */,
-				45FE8F892B94744D0096523C /* Main */,
 				45FE8F862B9473B90096523C /* AddTrip */,
+				45FE8F8E2B94747B0096523C /* ArchivedTrips */,
+				45FE8F892B94744D0096523C /* Main */,
+				45FE8F8B2B94745F0096523C /* Settings */,
 				45FE8F842B9473A40096523C /* Suggestions */,
 				45FE8F812B94726D0096523C /* UpcomingTrips */,
 			);
@@ -336,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				4501E2C12B8A6C3800F5AE25 /* TripManager.swift */,
+				45FE8F932B947CE00096523C /* PlanManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -362,6 +373,8 @@
 			children = (
 				45CA5FD42B93324B003539C5 /* UpcomingTripsDetailView.swift */,
 				459617D92B8A29460057D84F /* UpcomingTripsView.swift */,
+				45FE8F912B9476C40096523C /* AddPlanView.swift */,
+				45FE8F972B9482880096523C /* PlanDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +384,8 @@
 			children = (
 				451853A72B8B35FF00CF78DC /* UpcomingTripsViewModel.swift */,
 				45CA5FD62B9394EF003539C5 /* UpcomingTripsDetailViewModel.swift */,
+				45FE8F952B947F6D0096523C /* AddPlanViewModel.swift */,
+				45FE8F992B9484DB0096523C /* PlanDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -568,14 +583,17 @@
 				45CA5FD52B93324B003539C5 /* UpcomingTripsDetailView.swift in Sources */,
 				4501E2BB2B8A635600F5AE25 /* TripModel.swift in Sources */,
 				4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */,
+				45FE8F962B947F6D0096523C /* AddPlanViewModel.swift in Sources */,
 				45CA5FD32B9311DF003539C5 /* AddTripHeaderPhotoViewModel.swift in Sources */,
 				451853AB2B8B3AE000CF78DC /* ImageCache.swift in Sources */,
 				454297732B8669310005EC43 /* LoginView.swift in Sources */,
 				45CA5FD12B9304A2003539C5 /* AddTripHeaderPhotoView.swift in Sources */,
 				4507B0632B83949F00B0CC65 /* RootView.swift in Sources */,
 				451853AD2B8B3B2300CF78DC /* ImageLoader.swift in Sources */,
+				45FE8F9A2B9484DB0096523C /* PlanDetailViewModel.swift in Sources */,
 				4507B08D2B83A1FD00B0CC65 /* AuthManager.swift in Sources */,
 				45FE8F7B2B9459E50096523C /* ToolbarButtonView.swift in Sources */,
+				45FE8F982B9482880096523C /* PlanDetailView.swift in Sources */,
 				4542975A2B85EA540005EC43 /* StartView.swift in Sources */,
 				4510E9D22B89EA570003728D /* SettingsView.swift in Sources */,
 				4510E9CE2B89E02F0003728D /* CustomTabBarView.swift in Sources */,
@@ -600,6 +618,8 @@
 				4510E9C32B8873DD0003728D /* AuthNavLinkView.swift in Sources */,
 				4510E9CA2B887B9E0003728D /* LoginViewModel.swift in Sources */,
 				459617DA2B8A29460057D84F /* UpcomingTripsView.swift in Sources */,
+				45FE8F942B947CE00096523C /* PlanManager.swift in Sources */,
+				45FE8F922B9476C40096523C /* AddPlanView.swift in Sources */,
 				45CA5FD72B9394EF003539C5 /* UpcomingTripsDetailViewModel.swift in Sources */,
 				459617D22B8A234E0057D84F /* UserModel.swift in Sources */,
 				4510E9D42B89ECB30003728D /* SettingsViewModel.swift in Sources */,

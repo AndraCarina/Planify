@@ -49,7 +49,7 @@ struct AddTripView: View {
                 DatePicker("Select start date", selection: $startDate, displayedComponents: .date)
                     .padding()
                 
-                DatePicker("Select end date", selection: $endDate, displayedComponents: .date)
+                DatePicker("Select end date", selection: $endDate, in: startDate..., displayedComponents: .date)
                     .padding()
                 
                 AuthButtonView(text: "Add trip", icon: "plus") {

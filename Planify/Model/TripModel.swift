@@ -13,7 +13,7 @@ struct TripModel: Identifiable, Codable, Hashable {
     let name: String
     let location: String
     let photoURL: String
-    let startDate: String
-    let endDate: String
+    let startDate: Date
+    let endDate: Date
     var isFinished: String
 }

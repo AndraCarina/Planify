@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import FirebaseFirestore
-import URLImage
 
 @MainActor
 class TripManager: ObservableObject {
@@ -23,7 +22,7 @@ class TripManager: ObservableObject {
         
     }
     
-    func addTrip(name: String, location: String, photoURL: String, startDate: String, endDate: String) async {
+    func addTrip(name: String, location: String, photoURL: String, startDate: Date, endDate: Date) async {
         do {
             let uniqueID = Firestore.firestore().collection("trips").document().documentID
             

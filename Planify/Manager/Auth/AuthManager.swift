@@ -28,6 +28,7 @@ class AuthManager: ObservableObject {
     @Published var firebaseUser: FirebaseAuth.User?
     @Published var appUser: UserModel?
     @ObservedObject private var tripManager = TripManager.shared
+    @ObservedObject private var planManager = PlanManager.shared
     
     private init() {
         Task {
@@ -165,6 +166,7 @@ class AuthManager: ObservableObject {
         self.appUser = try? snapshot.data(as: UserModel.self)
         
         await tripManager.fetchTrips(userId: firebaseUser.uid)
+        await planManager.fetchPlans(userId: firebaseUser.uid)
         
         /* Set authState depending on the provider. */
         guard let providerID = firebaseUser.providerData.first?.providerID else {

@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct PlanModel: Identifiable, Codable {
+struct PlanModel: Identifiable, Codable, Hashable {
     let id: String
-    let taskId: String
+    let userId: String
+    let tripId: String
     let name: String
     let location: String
     let photoURL: String
-    let startDate: String
-    let endDate: String
+    let startDate: Date
 }
