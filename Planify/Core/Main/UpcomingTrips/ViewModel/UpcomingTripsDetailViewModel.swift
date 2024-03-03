@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class DetailPlanViewModel: ObservableObject {
+class UpcomingTripsDetailViewModel: ObservableObject {
     @ObservedObject private var tripManager = TripManager.shared
 
     func markTripFinished(trip: TripModel) {

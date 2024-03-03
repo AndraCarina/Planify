@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ImagePickerView: View {
+struct AddTripHeaderPhotoView: View {
     @Binding var path: NavigationPath
     @Binding var photoURL: String
-    @ObservedObject var viewModel = ImagePickerViewModel()
+    @ObservedObject var viewModel = AddTripHeaderPhotoViewModel()
 
     let columns = [
         GridItem(.flexible()),
@@ -61,5 +61,5 @@ struct ImageURLs: Decodable {
 }
 
 #Preview {
-    ImagePickerView(path: .constant(NavigationPath()), photoURL: .constant(""))
+    AddTripHeaderPhotoView(path: .constant(NavigationPath()), photoURL: .constant(""))
 }

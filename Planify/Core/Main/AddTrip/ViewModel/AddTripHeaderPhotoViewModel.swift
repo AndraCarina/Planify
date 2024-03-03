@@ -10,7 +10,7 @@ import SwiftUI
 
 import SwiftUI
 
-class ImagePickerViewModel: ObservableObject {
+class AddTripHeaderPhotoViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var imageResults: [UnsplashImage] = []
 

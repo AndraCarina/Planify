@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct ArchivedTripsView: View {
     var body: some View {
         Text("HistoryView")
     }
 }
 
 #Preview {
-    HistoryView()
+    ArchivedTripsView()
 }

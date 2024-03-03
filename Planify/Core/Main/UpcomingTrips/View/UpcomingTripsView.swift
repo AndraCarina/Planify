@@ -21,11 +21,11 @@ extension TripModel {
 
 import SwiftUI
 
-struct PlansView: View {
+struct UpcomingTripsView: View {
     @State private var searchTerm = ""
     @State private var path = NavigationPath()
     @ObservedObject private var tripManager = TripManager.shared
-    @ObservedObject private var viewModel = PlansViewModel()
+    @ObservedObject private var viewModel = UpcomingTripsViewModel()
 
     var body: some View {
         NavigationStack(path: $path){	
@@ -48,7 +48,7 @@ struct PlansView: View {
             .navigationTitle("Upcoming trips")
             .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always))
             .navigationDestination(for: TripModel.self) {trip in
-                DetailPlanView(trip: trip, path: $path)
+                UpcomingTripsDetailView(trip: trip, path: $path)
             }
             
         }
@@ -56,5 +56,5 @@ struct PlansView: View {
 }
 
 #Preview {
-    PlansView()
+    UpcomingTripsView()
 }

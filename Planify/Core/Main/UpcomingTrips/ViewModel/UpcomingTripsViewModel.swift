@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class PlansViewModel: ObservableObject {
+class UpcomingTripsViewModel: ObservableObject {
     @ObservedObject private var tripManager = TripManager.shared
     
     func filteredTrips(searchTerm: String) -> [TripModel] {

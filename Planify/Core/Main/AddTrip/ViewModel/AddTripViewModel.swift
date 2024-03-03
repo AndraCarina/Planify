@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import FirebaseFirestore
 
-class AddPlanViewModel: ObservableObject {
+class AddTripViewModel: ObservableObject {
     @ObservedObject private var authManager = AuthManager.shared
     @ObservedObject private var tripManager = TripManager.shared
     

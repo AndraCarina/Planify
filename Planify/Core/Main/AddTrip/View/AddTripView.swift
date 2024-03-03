@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AddPlanView: View {
+struct AddTripView: View {
     @SceneStorage("selectedTabIndex") var selectedTabIndex: Int = 0
-    @ObservedObject var viewModel = AddPlanViewModel()
+    @ObservedObject var viewModel = AddTripViewModel()
     @State private var path = NavigationPath()
     @State private var tripName = ""
     @State private var location = ""
@@ -64,7 +64,7 @@ struct AddPlanView: View {
             .ignoresSafeArea()
             .navigationDestination(for: String.self) { value in
                 switch value {
-                    case "ImagePickerView": ImagePickerView(path: $path, photoURL: $photoURL)
+                    case "ImagePickerView": AddTripHeaderPhotoView(path: $path, photoURL: $photoURL)
                     default: Text("View not found")
                 }
             }
@@ -73,5 +73,5 @@ struct AddPlanView: View {
 }
 
 #Preview {
-    AddPlanView()
+    AddTripView()
 }
