@@ -60,6 +60,7 @@ struct UpcomingTripsDetailView: View {
                                     Image(systemName: plan.type.systemImage)
                                         .resizable()
                                         .scaledToFit()
+                                        .foregroundStyle(plan.type.imageColor)
                                         .frame(width: 20, height: 20)
                                     Text(plan.name)
                                     Spacer()
@@ -89,7 +90,7 @@ struct UpcomingTripsDetailView: View {
                 Menu {
                     VStack {
                         NavigationLink(value: 1) {
-                            Text("Add new plan")
+                            Text("Add plan")
                         }
                         Button {
                             viewModel.markTripFinished(trip: trip)

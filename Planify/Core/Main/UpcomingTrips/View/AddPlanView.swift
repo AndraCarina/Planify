@@ -15,7 +15,7 @@ struct AddPlanView: View {
     @State private var endDate = Date().addingTimeInterval(86400)
     @State private var photoURL = ""
     @State private var planType: PlanType = .food
-    @State private var categories: [PlanType] = [.food, .transport]
+    @State private var categories: [PlanType] = [.food, .transport, .attraction, .event]
 
     @Binding var path: NavigationPath
     @ObservedObject private var viewModel = AddPlanViewModel()
@@ -36,6 +36,7 @@ struct AddPlanView: View {
                 ForEach(categories, id: \.self) { type in
                     HStack {
                         Image(systemName: type.systemImage)
+                            .foregroundStyle(type.imageColor)
                     }
                 }
             }

@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum PlanType: String, Codable, CaseIterable {
     case food
     case transport
+    case attraction
+    case event
     
     var systemImage: String {
         switch self {
@@ -17,6 +20,10 @@ enum PlanType: String, Codable, CaseIterable {
             return "fork.knife"
         case .transport:
             return "airplane"
+        case .attraction:
+            return "building.columns"
+        case .event:
+            return "party.popper"
         }
     }
     
@@ -26,6 +33,23 @@ enum PlanType: String, Codable, CaseIterable {
             return "Food"
         case .transport:
             return "Transport"
+        case .attraction:
+            return "Attraction"
+        case .event:
+            return "Event"
+        }
+    }
+    
+    var imageColor: Color {
+        switch self {
+        case .food:
+            return Color.green
+        case .transport:
+            return Color.red
+        case .attraction:
+            return Color.blue
+        case .event:
+            return Color.pink
         }
     }
 }
