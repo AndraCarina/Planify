@@ -43,9 +43,7 @@
 		459617D22B8A234E0057D84F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D12B8A234E0057D84F /* UserModel.swift */; };
 		459617D62B8A23FD0057D84F /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D52B8A23FD0057D84F /* TabModel.swift */; };
 		459617DA2B8A29460057D84F /* UpcomingTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D92B8A29460057D84F /* UpcomingTripsView.swift */; };
-		459617DC2B8A2BBD0057D84F /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DB2B8A2BBD0057D84F /* SuggestionView.swift */; };
 		459617DE2B8A2BE40057D84F /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DD2B8A2BE40057D84F /* AddTripView.swift */; };
-		459617E02B8A2C1B0057D84F /* ArchivedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617DF2B8A2C1B0057D84F /* ArchivedTripsView.swift */; };
 		45CA5FD12B9304A2003539C5 /* AddTripHeaderPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD02B9304A2003539C5 /* AddTripHeaderPhotoView.swift */; };
 		45CA5FD32B9311DF003539C5 /* AddTripHeaderPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD22B9311DF003539C5 /* AddTripHeaderPhotoViewModel.swift */; };
 		45CA5FD52B93324B003539C5 /* UpcomingTripsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA5FD42B93324B003539C5 /* UpcomingTripsDetailView.swift */; };
@@ -97,9 +95,7 @@
 		459617D12B8A234E0057D84F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		459617D52B8A23FD0057D84F /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		459617D92B8A29460057D84F /* UpcomingTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTripsView.swift; sourceTree = "<group>"; };
-		459617DB2B8A2BBD0057D84F /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		459617DD2B8A2BE40057D84F /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
-		459617DF2B8A2C1B0057D84F /* ArchivedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedTripsView.swift; sourceTree = "<group>"; };
 		45CA5FD02B9304A2003539C5 /* AddTripHeaderPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripHeaderPhotoView.swift; sourceTree = "<group>"; };
 		45CA5FD22B9311DF003539C5 /* AddTripHeaderPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripHeaderPhotoViewModel.swift; sourceTree = "<group>"; };
 		45CA5FD42B93324B003539C5 /* UpcomingTripsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTripsDetailView.swift; sourceTree = "<group>"; };
@@ -266,10 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				45FE8F862B9473B90096523C /* AddTrip */,
-				45FE8F8E2B94747B0096523C /* ArchivedTrips */,
 				45FE8F892B94744D0096523C /* Main */,
 				45FE8F8B2B94745F0096523C /* Settings */,
-				45FE8F842B9473A40096523C /* Suggestions */,
 				45FE8F812B94726D0096523C /* UpcomingTrips */,
 			);
 			path = Main;
@@ -390,22 +384,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		45FE8F842B9473A40096523C /* Suggestions */ = {
-			isa = PBXGroup;
-			children = (
-				45FE8F852B9473AC0096523C /* View */,
-			);
-			path = Suggestions;
-			sourceTree = "<group>";
-		};
-		45FE8F852B9473AC0096523C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				459617DB2B8A2BBD0057D84F /* SuggestionView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		45FE8F862B9473B90096523C /* AddTrip */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,30 +450,6 @@
 				4510E9D32B89ECB30003728D /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		45FE8F8E2B94747B0096523C /* ArchivedTrips */ = {
-			isa = PBXGroup;
-			children = (
-				45FE8F902B9474C30096523C /* View */,
-				45FE8F8F2B9474BB0096523C /* ViewModel */,
-			);
-			path = ArchivedTrips;
-			sourceTree = "<group>";
-		};
-		45FE8F8F2B9474BB0096523C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		45FE8F902B9474C30096523C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				459617DF2B8A2C1B0057D84F /* ArchivedTripsView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -600,7 +554,6 @@
 				4501E2C22B8A6C3800F5AE25 /* TripManager.swift in Sources */,
 				4501E2BD2B8A64A800F5AE25 /* PlanModel.swift in Sources */,
 				451853A82B8B35FF00CF78DC /* UpcomingTripsViewModel.swift in Sources */,
-				459617E02B8A2C1B0057D84F /* ArchivedTripsView.swift in Sources */,
 				4542975C2B85EAED0005EC43 /* LoadingView.swift in Sources */,
 				454297752B8674B00005EC43 /* RegisterView.swift in Sources */,
 				45E94DB12B84F8E000E05024 /* GoogleHelper.swift in Sources */,
@@ -623,7 +576,6 @@
 				45CA5FD72B9394EF003539C5 /* UpcomingTripsDetailViewModel.swift in Sources */,
 				459617D22B8A234E0057D84F /* UserModel.swift in Sources */,
 				4510E9D42B89ECB30003728D /* SettingsViewModel.swift in Sources */,
-				459617DC2B8A2BBD0057D84F /* SuggestionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

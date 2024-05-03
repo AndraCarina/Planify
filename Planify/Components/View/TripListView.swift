@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct TripListView: View {
     var trip: TripModel
