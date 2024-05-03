@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class PlanDetailViewModel: ObservableObject {
+class PlanViewModel: ObservableObject {
     @ObservedObject private var planManager = PlanManager.shared
     
     func deletePlan(plan: PlanModel) {

@@ -7,20 +7,24 @@
 
 import SwiftUI
 
-struct UpcomingTripsView: View {
+struct TripsView: View {
     @State private var searchTerm = ""
     @State private var path = NavigationPath()
     @ObservedObject private var tripManager = TripManager.shared
-    @ObservedObject private var viewModel = UpcomingTripsViewModel()
+    @ObservedObject private var viewModel = TripsViewModel()
 
     var body: some View {
         NavigationStack(path: $path){	
             List {
                 ForEach(viewModel.filteredTrips(searchTerm: searchTerm)) { trip in
-                    NavigationLink(value: trip) {
-                        TripListView(trip: trip)
-                    }
-                    .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+                    TripListView(trip: trip)
+                        .overlay {
+                            NavigationLink(value: trip) {
+                                TripListView(trip: trip)
+                            }
+                            .opacity(0)
+                        }
+                        .listRowInsets(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 15))
                 }
                 .onDelete(perform: { indexSet in
                     indexSet.forEach { index in
@@ -31,10 +35,10 @@ struct UpcomingTripsView: View {
             }
             .frame(maxWidth: .infinity)
             .listStyle(.plain)
-            .navigationTitle("Upcoming trips")
+            .navigationTitle("Trips")
             .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always))
             .navigationDestination(for: TripModel.self) {trip in
-                UpcomingTripsDetailView(trip: trip, path: $path)
+                TripView(trip: trip, path: $path)
             }
             
         }
@@ -42,5 +46,5 @@ struct UpcomingTripsView: View {
 }
 
 #Preview {
-    UpcomingTripsView()
+    TripsView()
 }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class UpcomingTripsDetailViewModel: ObservableObject {
+class TripViewModel: ObservableObject {
     @ObservedObject private var tripManager = TripManager.shared
     @ObservedObject private var planManager = PlanManager.shared
 

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct PlanDetailView: View {
+struct PlanView: View {
     let plan: PlanModel
     @Binding var path: NavigationPath
-    @ObservedObject private var viewModel = PlanDetailViewModel()
+    @ObservedObject private var viewModel = PlanViewModel()
     var body: some View {
         VStack {
             Text(plan.name)
@@ -43,5 +43,5 @@ struct PlanDetailView: View {
 }
 
 #Preview {
-    PlanDetailView(plan: PlanModel(id: "123", userId: "123", tripId: "123", name: "Resturant", location: "RestaurantLocation", photoURL: "", startDate: Date.now, type: PlanType.food), path: .constant(NavigationPath()))
+    PlanView(plan: PlanModel(id: "123", userId: "123", tripId: "123", name: "Resturant", location: "RestaurantLocation", photoURL: "", startDate: Date.now, type: PlanType.food), path: .constant(NavigationPath()))
 }

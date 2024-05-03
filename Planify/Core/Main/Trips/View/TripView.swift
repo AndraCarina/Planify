@@ -40,10 +40,10 @@ struct TripHeaderView: View {
     }
 }
 
-struct UpcomingTripsDetailView: View {
+struct TripView: View {
     let trip: TripModel
     @Binding var path: NavigationPath
-    @ObservedObject var viewModel = UpcomingTripsDetailViewModel()
+    @ObservedObject var viewModel = TripViewModel()
     @ObservedObject private var planManager = PlanManager.shared
     @Environment(\.colorScheme) var colorScheme
     
@@ -115,11 +115,11 @@ struct UpcomingTripsDetailView: View {
             AddPlanView(trip: trip, path: $path)
         }
         .navigationDestination(for: PlanModel.self) {plan in
-            PlanDetailView(plan: plan, path: $path)
+            PlanView(plan: plan, path: $path)
         }
     }
 }
 
 #Preview {
-    UpcomingTripsDetailView(trip: TripModel(id: "123", userId: "123", name: "Barcelona Fun", location: "Barcelona, Spain", photoURL: "https://media.cntraveler.com/photos/591f1c7d1f187a2af3dedef0/16:9/w_2580,c_limit/barcelona-park-guell-GettyImages-512152500.jpg", startDate: Date.now, endDate: Date.now, isFinished: "false"), path: .constant(NavigationPath()))
+    TripView(trip: TripModel(id: "123", userId: "123", name: "Barcelona Fun", location: "Barcelona, Spain", photoURL: "https://media.cntraveler.com/photos/591f1c7d1f187a2af3dedef0/16:9/w_2580,c_limit/barcelona-park-guell-GettyImages-512152500.jpg", startDate: Date.now, endDate: Date.now, isFinished: "false"), path: .constant(NavigationPath()))
 }

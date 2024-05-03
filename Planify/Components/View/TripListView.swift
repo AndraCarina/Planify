@@ -10,20 +10,21 @@ import SwiftUI
 struct TripListView: View {
     var trip: TripModel
     var body: some View {
-        HStack {
+        ZStack {
             RemoteImageView(url: trip.photoURL)
                 .scaledToFill()
-                .frame(width: 100, height: 100)
+                .frame(height: 100)
                 .clipped()
+                .grayscale(trip.isFinished == "true" ? 1.0 : 0.0)
             
             VStack(alignment: .leading)
             {
                 Text(trip.name)
-                    .font(.title)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundStyle(Color.white)
+                    .shadow(color: .black, radius: 1)
             }
-            
-            Spacer()
         }
     }
 }

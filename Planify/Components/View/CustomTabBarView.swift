@@ -41,7 +41,7 @@ struct CustomTabBarView: View {
 
 #Preview {
     CustomTabBarView(selectedTabIndex: .constant(0), tabs: [
-        TabModel(normalImageName: "paperplane", selectedImageName: "paperplane.fill", selectedImageColor: .blue, selectedView: AnyView(UpcomingTripsView())),
+        TabModel(normalImageName: "paperplane", selectedImageName: "paperplane.fill", selectedImageColor: .blue, selectedView: AnyView(TripsView())),
         TabModel(normalImageName: "plus.app", selectedImageName: "plus.app.fill", selectedImageColor: .indigo, selectedView: AnyView(AddTripView())),
         TabModel(normalImageName: "gearshape", selectedImageName: "gearshape.fill", selectedImageColor: .orange, selectedView: AnyView(SettingsView())),
     ])
