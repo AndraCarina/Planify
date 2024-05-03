@@ -35,7 +35,6 @@ struct TripsView: View {
             }
             .frame(maxWidth: .infinity)
             .listStyle(.plain)
-            .navigationTitle("Trips")
             .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always))
             .navigationDestination(for: TripModel.self) {trip in
                 TripView(trip: trip, path: $path)
