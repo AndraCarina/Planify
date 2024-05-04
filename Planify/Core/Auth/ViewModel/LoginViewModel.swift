@@ -34,5 +34,11 @@ class LoginViewModel: ObservableObject {
             await authManager.resetPassword(email: email)
         }
     }
+    
+    func validateFields(email: String, password: String) -> Bool {
+        guard !email.isEmpty else { return false }
+        guard password.count >= 6 else { return false }
+        return true
+    }
 }
 

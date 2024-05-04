@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showingValidationAlert = false
     @Binding var path: NavigationPath
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel =  LoginViewModel()
@@ -56,7 +57,12 @@ struct LoginView: View {
                 .padding(.leading, 16)
                 
                 AuthButtonView(text: "Log in with Email", icon: "envelope.fill") {
-                    viewModel.signInWithEmail(email: email, password: password)
+                    if viewModel.validateFields(email: email, password: password) {
+                        viewModel.signInWithEmail(email: email, password: password)
+                    }
+                    else {
+                        showingValidationAlert = true
+                    }
                 }
                 
                 Text("---- or ----")
@@ -85,6 +91,11 @@ struct LoginView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .alert("Validation Error", isPresented: $showingValidationAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text("Please check your inputs. Make sure all fields are filled and dates are correct.")
+        }
         .toolbar {
             ToolbarItem(placement: .topBarLeading){
                 Button {
