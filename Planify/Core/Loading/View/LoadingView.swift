@@ -22,14 +22,17 @@ struct LoadingView: View {
                     .foregroundStyle(Color(.blue))
                 
                 Image(systemName: "airplane")
-                    .font(.largeTitle)
                     .scaleEffect(2)
+                    .foregroundStyle(Color(.blue))
                     .offset(y: -150)
-                    .rotationEffect(.degrees(moveAlongCirclePath ? 0 : -360))
-                    .animation(.linear(duration: 5).repeatForever(autoreverses: false), value: moveAlongCirclePath)
-                    .onAppear {
-                        self.moveAlongCirclePath.toggle()
-                    }
+                    .shadow(color: Color(.black), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    
+                .font(.largeTitle)
+                .rotationEffect(.degrees(moveAlongCirclePath ? 0 : -360))
+                .animation(.linear(duration: 5).repeatForever(autoreverses: false), value: moveAlongCirclePath)
+                .onAppear {
+                    self.moveAlongCirclePath.toggle()
+                }
             }
             
             Text(String(format: "%.0f%%", progress * 100))

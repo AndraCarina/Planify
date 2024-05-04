@@ -16,7 +16,10 @@ struct WelcomeView: View {
             ZStack {
                 VStack {
                     HStack {
-                        Image(systemName: "house.fill")
+                        Image("AppLogo")
+                            .resizable()
+                            .renderingMode(.template)
+                            .frame(width: 30, height: 30)
                         
                         Text("Planify")
                             .font(.system(size: 30))
@@ -24,9 +27,11 @@ struct WelcomeView: View {
                     }
                     .padding(.vertical, 20)
                     
-                    Image(systemName: "house.fill")
+                    Image("AppLogo")
                         .resizable()
-                        .frame(width: 300, height: 400)
+                        .renderingMode(.template)
+                        .foregroundStyle(Color(.blue))
+                        .frame(width: 400, height: 400)
                     
                     Text("Welcome to Planify")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
