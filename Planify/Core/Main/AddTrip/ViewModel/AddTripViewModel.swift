@@ -18,4 +18,11 @@ class AddTripViewModel: ObservableObject {
             await tripManager.addTrip(name: tripName, location: location, photoURL: photoURL, startDate: startDate, endDate: endDate)
         }
     }
+    
+    func validateFields(tripName: String, location: String, photoURL: String) -> Bool {
+            guard !tripName.isEmpty else { return false }
+            guard !location.isEmpty else { return false }
+            guard !photoURL.isEmpty else { return false }
+            return true
+    }
 }

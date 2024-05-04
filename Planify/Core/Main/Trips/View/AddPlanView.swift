@@ -17,6 +17,7 @@ struct AddPlanView: View {
     @State private var photoImage: UIImage?
     @State private var planType: PlanType = .food
     @State private var categories: [PlanType] = [.food, .transport, .attraction, .event]
+    @State private var showingValidationAlert = false
 
     @Binding var path: NavigationPath
     @ObservedObject private var viewModel = AddPlanViewModel()
@@ -80,13 +81,23 @@ struct AddPlanView: View {
             }
             
             AuthButtonView(text: "Add plan", icon: "plus") {
-                viewModel.addPlan(name: planName, location: location, startDate: startDate, trip: trip, type: planType, image: photoImage)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    path.removeLast()
+                if viewModel.validateFields(planName: planName, location: location) {
+                    viewModel.addPlan(name: planName, location: location, startDate: startDate, trip: trip, type: planType, image: photoImage)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        path.removeLast()
+                    }
+                }
+                else {
+                    showingValidationAlert = true
                 }
             }
             
             Spacer()
+        }
+        .alert("Validation Error", isPresented: $showingValidationAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text("Please check your inputs. Make sure all fields are filled and dates are correct.")
         }
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)

@@ -16,6 +16,7 @@ struct AddTripView: View {
     @State private var startDate = Date()
     @State private var endDate = Date().addingTimeInterval(86400)
     @State private var photoURL = ""
+    @State private var showingValidationAlert = false
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -70,18 +71,28 @@ struct AddTripView: View {
                     .padding()
                 
                 AuthButtonView(text: "Add trip", icon: "plus") {
-                    viewModel.addTrip(tripName: tripName, location: location, photoURL: photoURL, startDate: startDate, endDate: endDate)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                        selectedTabIndex = 0
-                        tripName = ""
-                        location = ""
-                        startDate = Date()
-                        endDate = Date().addingTimeInterval(86400)
-                        photoURL = ""
+                    if viewModel.validateFields(tripName: tripName, location: location, photoURL: photoURL) {
+                        viewModel.addTrip(tripName: tripName, location: location, photoURL: photoURL, startDate: startDate, endDate: endDate)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                            selectedTabIndex = 0
+                            tripName = ""
+                            location = ""
+                            startDate = Date()
+                            endDate = Date().addingTimeInterval(86400)
+                            photoURL = ""
+                        }
+                    }
+                    else {
+                        showingValidationAlert = true
                     }
                 }
                 
                 Spacer()
+            }
+            .alert("Validation Error", isPresented: $showingValidationAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text("Please check your inputs. Make sure all fields are filled and dates are correct.")
             }
             .ignoresSafeArea()
             .navigationDestination(for: String.self) { value in

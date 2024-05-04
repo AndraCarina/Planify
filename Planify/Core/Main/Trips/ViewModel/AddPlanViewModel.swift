@@ -17,4 +17,10 @@ class AddPlanViewModel: ObservableObject {
             await planManager.addPlan(name: name, location: location,startDate: startDate, trip: trip, type: type, image: image)
         }
     }
+    
+    func validateFields(planName: String, location: String) -> Bool {
+            guard !planName.isEmpty else { return false }
+            guard !location.isEmpty else { return false }
+            return true
+    }
 }
