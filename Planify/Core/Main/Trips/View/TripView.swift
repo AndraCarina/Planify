@@ -92,11 +92,21 @@ struct TripView: View {
                         NavigationLink(value: 1) {
                             Text("Add plan")
                         }
-                        Button {
-                            viewModel.markTripFinished(trip: trip)
-                            path = NavigationPath()
-                        } label: {
-                            Text("Mark as finished")
+                        
+                        if trip.isFinished == "false" {
+                            Button {
+                                viewModel.markTripFinished(trip: trip)
+                                path = NavigationPath()
+                            } label: {
+                                Text("Mark as finished")
+                            }
+                        } else {
+                            Button {
+                                viewModel.markTripUnfinished(trip: trip)
+                                path = NavigationPath()
+                            } label: {
+                                Text("Mark as unfinished")
+                            }
                         }
                         
                         Button(role: .destructive){

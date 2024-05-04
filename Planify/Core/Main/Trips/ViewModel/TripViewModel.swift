@@ -21,6 +21,15 @@ class TripViewModel: ObservableObject {
         }
     }
     
+    func markTripUnfinished(trip: TripModel) {
+        var modifiedTrip = trip
+        modifiedTrip.isFinished = "false"
+        
+        Task {
+            await tripManager.updateTrip(modifiedTrip: modifiedTrip)
+        }
+    }
+    
     func filteredPlans(trip: TripModel) -> [PlanModel] {
         guard !trip.id.isEmpty else {
             return planManager.plans
