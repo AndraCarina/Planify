@@ -12,6 +12,7 @@ struct RegisterView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var fullname = ""
+    @State private var showingValidationAlert = false
     @Binding var path: NavigationPath
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel =  RegisterViewModel()
@@ -50,7 +51,12 @@ struct RegisterView: View {
                 
                 
                 AuthButtonView(text: "Register account", icon: "plus.app") {
-                    viewModel.signUp(email: email, password: password, fullname: fullname)
+                    if viewModel.validateFields(email: email, password: password, fullname: fullname, confirmPassword: confirmPassword) {
+                        viewModel.signUp(email: email, password: password, fullname: fullname)
+                    }
+                    else {
+                        showingValidationAlert = true
+                    }
                 }
                 .padding(.top, 10)
                 
@@ -60,6 +66,11 @@ struct RegisterView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .alert("Validation Error", isPresented: $showingValidationAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text("Please check your inputs. Make sure all fields are filled and dates are correct.")
+        }
         .toolbar {
             ToolbarItem(placement: .topBarLeading){
                 Button {

@@ -15,4 +15,12 @@ class RegisterViewModel: ObservableObject {
             await authManager.signUp(email: email, password: password, fullname: fullname)
         }
     }
+    
+    func validateFields(email: String, password: String, fullname: String, confirmPassword: String) -> Bool {
+        guard !email.isEmpty else { return false }
+        guard password.count >= 6 else { return false }
+        guard !fullname.isEmpty else { return false }
+        guard password == confirmPassword else {return false }
+        return true
+    }
 }
