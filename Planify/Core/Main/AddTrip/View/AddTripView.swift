@@ -47,9 +47,26 @@ struct AddTripView: View {
                     .font(.subheadline)
                 
                 DatePicker("Select start date", selection: $startDate, displayedComponents: .date)
+                    .onChange(of: startDate) {
+                        let calendar = Calendar.current
+                        let components = calendar.dateComponents([.year, .month, .day], from: startDate)
+                        if let startOfDay = calendar.date(from: components) {
+                            startDate = startOfDay
+                        }
+                    }
                     .padding()
                 
                 DatePicker("Select end date", selection: $endDate, in: startDate..., displayedComponents: .date)
+                    .onChange(of: endDate) {
+                        let calendar = Calendar.current
+                        var components = calendar.dateComponents([.year, .month, .day], from: endDate)
+                        components.hour = 23
+                        components.minute = 59
+                        components.second = 59
+                        if let endOfDay = calendar.date(from: components) {
+                            endDate = endOfDay
+                        }
+                    }
                     .padding()
                 
                 AuthButtonView(text: "Add trip", icon: "plus") {
