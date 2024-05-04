@@ -14,6 +14,7 @@ struct PlanView: View {
     var body: some View {
         VStack {
             Text(plan.name)
+            RemoteImageView(url: plan.photoURL)
         }
         .navigationBarBackButtonHidden()
         .toolbar {

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import FirebaseFirestore
+import FirebaseStorage
 
 @MainActor
 class PlanManager: ObservableObject {
@@ -22,11 +23,24 @@ class PlanManager: ObservableObject {
         
     }
     
-    func addPlan(name: String, location: String, photoURL: String, startDate: Date, trip: TripModel, type: PlanType) async {
+    func addPlan(name: String, location: String, startDate: Date, trip: TripModel, type: PlanType, image: UIImage?) async {
         do {
             let uniqueID = Firestore.firestore().collection("plans").document().documentID
             
-            let plan = PlanModel(id: uniqueID, userId: AuthManager.shared.firebaseUser!.uid, tripId: trip.id, name: name, location: location, photoURL: photoURL, startDate: startDate, type: type)
+            var photoURLString = ""
+            
+            if image != nil {
+                let storageRef = Storage.storage().reference().child("\(uniqueID).jpeg")
+                let resizedImage = image?.jpegData(compressionQuality: 1.0)
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpg"
+                
+                let _ = try await storageRef.putDataAsync(resizedImage!, metadata: metadata)
+                let photoURL = try await storageRef.downloadURL()
+                photoURLString = "\(photoURL)"
+            }
+            
+            let plan = PlanModel(id: uniqueID, userId: AuthManager.shared.firebaseUser!.uid, tripId: trip.id, name: name, location: location, photoURL: photoURLString, startDate: startDate, type: type)
             
             let encodedPlan = try Firestore.Encoder().encode(plan)
             
@@ -40,6 +54,8 @@ class PlanManager: ObservableObject {
     
     func deletePlan(plan: PlanModel) async {
         do {
+            let storageRef = Storage.storage().reference().child("\(plan.id).jpeg")
+            try await storageRef.delete()
             try await Firestore.firestore().collection("plans").document(plan.id).delete()
             if let index = plans.firstIndex(where: { $0.id == plan.id }) {
                 plans.remove(at: index)
