@@ -41,6 +41,7 @@
 		454297732B8669310005EC43 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297722B8669310005EC43 /* LoginView.swift */; };
 		454297752B8674B00005EC43 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454297742B8674B00005EC43 /* RegisterView.swift */; };
 		457A74072BE619BC005AE622 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 457A74062BE619BC005AE622 /* FirebaseStorage */; };
+		457A74092BE62C38005AE622 /* FullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457A74082BE62C38005AE622 /* FullScreenImageView.swift */; };
 		459617D22B8A234E0057D84F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D12B8A234E0057D84F /* UserModel.swift */; };
 		459617D62B8A23FD0057D84F /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D52B8A23FD0057D84F /* TabModel.swift */; };
 		459617DA2B8A29460057D84F /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459617D92B8A29460057D84F /* TripsView.swift */; };
@@ -93,6 +94,7 @@
 		454297702B864DED0005EC43 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		454297722B8669310005EC43 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		454297742B8674B00005EC43 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		457A74082BE62C38005AE622 /* FullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageView.swift; sourceTree = "<group>"; };
 		459617D12B8A234E0057D84F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		459617D52B8A23FD0057D84F /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		459617D92B8A29460057D84F /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				459617D92B8A29460057D84F /* TripsView.swift */,
 				45FE8F912B9476C40096523C /* AddPlanView.swift */,
 				45FE8F972B9482880096523C /* PlanView.swift */,
+				457A74082BE62C38005AE622 /* FullScreenImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				45CA5FD52B93324B003539C5 /* TripView.swift in Sources */,
 				4501E2BB2B8A635600F5AE25 /* TripModel.swift in Sources */,
 				4542976D2B8612990005EC43 /* AuthButtonView.swift in Sources */,
+				457A74092BE62C38005AE622 /* FullScreenImageView.swift in Sources */,
 				45FE8F962B947F6D0096523C /* AddPlanViewModel.swift in Sources */,
 				45CA5FD32B9311DF003539C5 /* AddTripHeaderPhotoViewModel.swift in Sources */,
 				451853AB2B8B3AE000CF78DC /* ImageCache.swift in Sources */,
