@@ -73,6 +73,11 @@ struct AddTripView: View {
                     viewModel.addTrip(tripName: tripName, location: location, photoURL: photoURL, startDate: startDate, endDate: endDate)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                         selectedTabIndex = 0
+                        tripName = ""
+                        location = ""
+                        startDate = Date()
+                        endDate = Date().addingTimeInterval(86400)
+                        photoURL = ""
                     }
                 }
                 
