@@ -13,7 +13,6 @@ struct AddPlanView: View {
     @State private var planName = ""
     @State private var location = ""
     @State private var startDate = Date()
-    @State private var endDate = Date().addingTimeInterval(86400)
     @State private var photoPick: PhotosPickerItem?
     @State private var photoImage: UIImage?
     @State private var planType: PlanType = .food
@@ -82,7 +81,7 @@ struct AddPlanView: View {
             
             AuthButtonView(text: "Add plan", icon: "plus") {
                 viewModel.addPlan(name: planName, location: location, startDate: startDate, trip: trip, type: planType, image: photoImage)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     path.removeLast()
                 }
             }

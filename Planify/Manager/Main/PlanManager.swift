@@ -54,8 +54,10 @@ class PlanManager: ObservableObject {
     
     func deletePlan(plan: PlanModel) async {
         do {
-            let storageRef = Storage.storage().reference().child("\(plan.id).jpeg")
-            try await storageRef.delete()
+            if plan.photoURL != "" {
+                let storageRef = Storage.storage().reference().child("\(plan.id).jpeg")
+                try await storageRef.delete()
+            }
             try await Firestore.firestore().collection("plans").document(plan.id).delete()
             if let index = plans.firstIndex(where: { $0.id == plan.id }) {
                 plans.remove(at: index)
