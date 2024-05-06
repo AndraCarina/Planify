@@ -136,6 +136,29 @@ class AuthManager: ObservableObject {
         }
     }
     
+    func deleteUser() async {
+        do {
+            /* Delete all plans belonging to the user. */
+            for plan in planManager.plans {
+                await planManager.deletePlan(plan: plan)
+            }
+            
+            /* Delete all trips belonging to the user. */
+            for trip in tripManager.trips {
+                await tripManager.deleteTrip(trip: trip)
+            }
+            
+            try await Firestore.firestore().collection("users").document(firebaseUser!.uid).delete()
+            
+            try await firebaseUser?.delete()
+            
+            await fetchUser()
+        } catch {
+            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+            errorMessage = error.localizedDescription
+        }
+    }
+    
     func resetPassword(email: String) async {
         do {
             try await Auth.auth().sendPasswordReset(withEmail: email)

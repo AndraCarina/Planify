@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 @main
-struct PlanifyApp: App {
+    struct PlanifyApp: App {
     init() {
         FirebaseApp.configure()
     }
